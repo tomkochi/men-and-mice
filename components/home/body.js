@@ -1,5 +1,5 @@
 import "../../public/css/bootstrap.css";
-import "../../scss/home/body.scss";
+// import "../../scss/home/body.scss";
 
 const Body = () => {
   return (
@@ -168,6 +168,232 @@ const Body = () => {
         {/* .right */}
       </div>
       {/* .bottom */}
+      <style jsx>{`
+        .body {
+          padding-bottom: 35px;
+          .top {
+            .left,
+            .middle,
+            .right {
+              padding: 46px 0;
+              border-right: 1px solid #4e4c4d;
+              @media (max-width: 991px) {
+                padding: 15px 0;
+              }
+              @media (max-width: 767px) {
+                border-right: none;
+                padding: 0;
+              }
+            }
+            .left {
+              .search {
+                font-size: 18px;
+                color: #bdbcbc;
+                background: url(/img/search.svg) no-repeat transparent;
+                background-position: left center;
+                border: none;
+                outline: none;
+                padding-left: 35px;
+                @media (max-width: 767px) {
+                  font-size: 14px;
+                }
+              }
+            }
+            .middle {
+              padding-left: 20px;
+              padding-right: 20px;
+              @media (max-width: 767px) {
+                padding-left: 0;
+                padding-right: 0;
+              }
+              .body-nav-wrapper {
+                overflow: hidden;
+                .body-nav {
+                  padding-top: 5px;
+                  padding-bottom: 15px;
+                  overflow-y: hidden;
+                  overflow-x: auto;
+                  .body-nav-item {
+                    color: rgba(255, 255, 255, 0.6);
+                    font-size: 18px;
+                    margin: 0 20px;
+                    cursor: pointer;
+                    position: relative;
+                    @media (max-width: 767px) {
+                      font-size: 14px;
+                    }
+                    &.active {
+                      color: #ffffff;
+                    }
+                    &:first-of-type {
+                      @media (max-width: 767px) {
+                        margin-left: 0;
+                      }
+                    }
+                  }
+                }
+              }
+              .body-nav-item:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 30px;
+                width: 100%;
+                height: 2px;
+                background: transparent;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                transition: all 0.5s;
+              }
+              .body-nav-item.active:after,
+              .body-nav-item:hover:after {
+                background: #ffdb00;
+              }
+            }
+            .right {
+              padding-left: 25px;
+              border: none;
+              .sort {
+                color: #bdbcbc;
+                font-size: 18px;
+                .sort-button {
+                  color: #ffffff;
+                  font-size: 18px;
+                  border: none;
+                  background: transparent;
+                  padding: 0;
+                }
+              }
+            }
+          }
+
+          // BOTTOM STARTS HERE
+          .bottom {
+            .left,
+            .middle,
+            .right {
+              border-top: 1px solid #4e4c4d;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              min-height: 358px;
+              @media (max-width: 767px) {
+                min-height: 278px;
+              }
+            }
+            .left {
+              padding: 0;
+              @media (max-width: 767px) {
+                display: none;
+              }
+              button.this-weeks-post {
+                border: none;
+                height: 29px;
+                background-color: #ffdb00;
+                color: #221f20;
+                font-size: 12px;
+              }
+              .date {
+                font-family: "Capitolium Regular";
+                color: #b7b6b6;
+                font-size: 20px;
+              }
+            }
+            .right {
+              text-align: center;
+              @media (max-width: 767px) {
+                display: none;
+              }
+            }
+            .left,
+            .middle {
+              border-right: 1px solid #4e4c4d;
+              @media (max-width: 767px) {
+                border-right: none;
+              }
+            }
+            .middle {
+              padding-right: 80px;
+              overflow: hidden;
+              padding-left: 0;
+              position: relative;
+              @media (max-width: 991px) {
+                padding-right: 20px;
+              }
+              .for-image-gap div {
+                width: 250px;
+                height: 100%;
+                @media (max-width: 991px) {
+                  width: 140px;
+                }
+              }
+              img {
+                position: absolute;
+                left: -58px;
+                @media (max-width: 991px) {
+                  width: 130px;
+                  left: -38px;
+                }
+                &.png {
+                  left: 0;
+                  width: 180px;
+                  height: 100%;
+                  object-fit: cover;
+                  @media (max-width: 991px) {
+                    width: 98px;
+                  }
+                }
+              }
+              h4 {
+                font-family: "Apercu Regular";
+                font-size: 12px;
+                color: #ffdb00;
+                text-transform: uppercase;
+                span {
+                  display: inline-block;
+                  width: 20px;
+                }
+              }
+              h3 {
+                font-family: "Apercu Bold";
+                font-size: 36px;
+                color: #ffffff;
+
+                @media (max-width: 991px) {
+                  font-size: 28px;
+                }
+                @media (max-width: 767px) {
+                  font-size: 20px;
+                }
+              }
+            }
+            .right {
+              .read-link {
+                font-family: "Capitolium Bold";
+                font-size: 20px;
+                color: #b7b6b6;
+                cursor: pointer;
+                img {
+                  -webkit-transition: all 0.5s;
+                  -moz-transition: all 0.5s;
+                  -ms-transition: all 0.5s;
+                  -o-transition: all 0.5s;
+                  transition: all 0.5s;
+                }
+                &:hover img {
+                  -webkit-transform: translateX(20px);
+                  -moz-transform: translateX(20px);
+                  -ms-transform: translateX(20px);
+                  -o-transform: translateX(20px);
+                  transform: translateX(20px);
+                }
+              }
+            }
+          }
+        }
+      `}</style>
     </section>
   );
 };

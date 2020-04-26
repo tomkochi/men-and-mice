@@ -1,6 +1,3 @@
-import "../scss/header.scss";
-import "../scss/header-responsive.scss";
-
 const Header = () => {
   return (
     <div className="header">
@@ -149,7 +146,99 @@ const Header = () => {
           </ul>
         </div>
       </nav>
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .header {
+          nav {
+            padding: 37px 50px;
+            background: white;
+            @media (max-width: 1030px) {
+              padding: 30px;
+            }
+            ul {
+              &.middle li {
+                padding: 0 22px;
+                @media (max-width: 1140px) {
+                  padding: 0 15px;
+                }
+                @media (max-width: 1070px) {
+                  padding: 0 10px;
+                }
+              }
+              &:first-of-type {
+                li a {
+                  position: relative;
+                  &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: transparent;
+                    -webkit-transition: all 0.5s;
+                    -moz-transition: all 0.5s;
+                    -ms-transition: all 0.5s;
+                    -o-transition: all 0.5s;
+                    transition: all 0.5s;
+                    -webkit-transform: translateY(20px);
+                    -moz-transform: translateY(20px);
+                    -ms-transform: translateY(20px);
+                    -o-transform: translateY(20px);
+                    transform: translateY(20px);
+                  }
+                  &:hover:after {
+                    background: #ffdb00;
+                    -webkit-transform: translateY(0);
+                    -moz-transform: translateY(0);
+                    -ms-transform: translateY(0);
+                    -o-transform: translateY(0);
+                    transform: translateY(0);
+                  }
+                }
+              }
+              li {
+                margin-top: auto;
+                margin-bottom: auto;
+                position: relative;
+                text-align: center;
+                a {
+                  font-family: "Apercu Medium";
+                  font-size: 18px;
+                  color: white !important;
+                  svg * {
+                    -webkit-transition: all 0.5s;
+                    -moz-transition: all 0.5s;
+                    -ms-transition: all 0.5s;
+                    -o-transition: all 0.5s;
+                    transition: all 0.5s;
+                  }
+                  &:hover svg * {
+                    stroke: #ffdb00;
+                  }
+                }
+                button {
+                  font-size: 16px;
+                  color: #221f20;
+                  padding: 12px 18px;
+                  background: #ffdb00;
+                  border: none;
+                  -webkit-border-radius: 0;
+                  -moz-border-radius: 0;
+                  border-radius: 0;
+                  -webkit-transition: background 0.5s;
+                  -moz-transition: background 0.5s;
+                  -ms-transition: background 0.5s;
+                  -o-transition: background 0.5s;
+                  transition: background 0.5s;
+                  &:hover {
+                    background: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}</style>
     </div>
   );
 };
