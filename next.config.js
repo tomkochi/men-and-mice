@@ -5,3 +5,6 @@ module.exports = withCSS(
     cssModules: false,
   })
 );
+module.export = {
+  distDir: "build",
+};
