@@ -7,24 +7,15 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/css/bootstrap.css" />
 
+          <link rel="preload" href="/fonts/apercu/apercu bold.otf" as="font" />
           <link
             rel="preload"
-            href="/fonts/apercu/{Colophon} Aperçu Bold Typeface.otf"
+            href="/fonts/apercu/apercu medium.otf"
             as="font"
           />
           <link
             rel="preload"
-            href="/fonts/apercu/{Colophon} Aperçu Light Typeface.otf"
-            as="font"
-          />
-          <link
-            rel="preload"
-            href="/fonts/apercu/{Colophon} Aperçu Medium Typeface.otf"
-            as="font"
-          />
-          <link
-            rel="preload"
-            href="/fonts/apercu/{Colophon} Aperçu Regular Typeface.otf"
+            href="/fonts/apercu/apercu regular.otf"
             as="font"
           />
 
