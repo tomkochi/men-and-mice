@@ -19,11 +19,17 @@ const Home = () => {
       <style jsx>{`
         .heading-wrapper {
           padding: 120px 0;
+          @media (max-width: 992px) {
+            padding: 30px 0;
+          }
         }
         h1 {
           font-family: "Apercu Regular";
           font-size: 48px;
           color: #bdbcbc;
+          @media (max-width: 992px) {
+            font-size: 24px;
+          }
         }
         h1 span {
           font-family: "Apercu Medium";
@@ -33,24 +39,7 @@ const Home = () => {
           font-family: "Apercu Bold";
           font-size: 48px;
           color: #ffdb00;
-        }
-        @media (max-width: 992px) {
-          .heading-wrapper {
-            padding: 100px 0;
-          }
-          h1,
-          h2 {
-            font-size: 40px;
-          }
-        }
-        @media (max-width: 992px) {
-          .heading-wrapper {
-            padding: 30px 0;
-          }
-          h1 {
-            font-size: 24px;
-          }
-          h2 {
+          @media (max-width: 992px) {
             font-size: 36px;
           }
         }

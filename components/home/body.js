@@ -1,6 +1,3 @@
-import "../../public/css/bootstrap.css";
-// import "../../scss/home/body.scss";
-
 const Body = () => {
   return (
     <section className="body">

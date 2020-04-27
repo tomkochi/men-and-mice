@@ -120,9 +120,7 @@ export default class MyDocument extends Document {
               width: calc(100vw - 100px);
               max-width: 1300px;
               margin: 0 auto;
-            }
-            @media (max-width: 768px) {
-              .home {
+              @media (max-width: 768px) {
                 max-width: calc(100vw - 55px);
               }
             }
