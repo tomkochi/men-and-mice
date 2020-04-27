@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -865,9 +865,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
+/* harmony import */ var _public_css_global_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../public/css/global.css */ "./public/css/global.css");
+/* harmony import */ var _public_css_global_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_public_css_global_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/baijutoms/Documents/Works/Web/next/viska/m-and-m/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -877,14 +880,14 @@ const Layout = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5,
+      lineNumber: 6,
       columnNumber: 5
     }
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
+      lineNumber: 7,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -892,14 +895,14 @@ const Layout = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 8,
       columnNumber: 7
     }
   }, props.children), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 9,
       columnNumber: 7
     }
   }));
@@ -1426,7 +1429,18 @@ function Index() {
 
 /***/ }),
 
-/***/ 4:
+/***/ "./public/css/global.css":
+/*!*******************************!*\
+  !*** ./public/css/global.css ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/blog.js ***!
   \*****************************/
