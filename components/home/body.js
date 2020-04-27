@@ -183,6 +183,9 @@ const Body = () => {
               }
             }
             .left {
+              @media (max-width: 768px) {
+                padding: 0 15px;
+              }
               .search {
                 font-size: 18px;
                 color: #bdbcbc;
@@ -200,8 +203,8 @@ const Body = () => {
               padding-left: 20px;
               padding-right: 20px;
               @media (max-width: 767px) {
-                padding-left: 0;
-                padding-right: 0;
+                padding-left: 15px;
+                padding-right: 15px;
               }
               .body-nav-wrapper {
                 overflow: hidden;

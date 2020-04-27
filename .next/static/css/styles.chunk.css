@@ -61,8 +61,10 @@ label:focus,
   width: calc(100vw - 100px);
   max-width: 1300px;
   margin: 0 auto;
-  @media (max-width: 768px) {
-    max-width: calc(100vw - 55px);
+}
+@media (max-width: 767px) {
+  .home {
+    width: calc(100vw - 30px);
   }
 }
 
