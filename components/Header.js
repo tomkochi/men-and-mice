@@ -17,7 +17,7 @@ const Header = () => {
           <img src="/img/sandwich.svg" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav middle m-auto">
+          <ul className="navbar-nav middle">
             <li className="nav-item">
               <a className="nav-link" href="#">
                 Why us?
@@ -44,7 +44,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a className="nav-link" href="#">
                 <svg
@@ -155,13 +155,23 @@ const Header = () => {
               padding: 30px;
             }
             ul {
-              &.middle li {
-                padding: 0 22px;
+              &.middle {
+                position: absolute;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
                 @media (max-width: 1140px) {
-                  padding: 0 15px;
+                  position: static;
                 }
-                @media (max-width: 1070px) {
-                  padding: 0 10px;
+                li {
+                  padding: 0 22px;
+                  @media (max-width: 1310px) {
+                    padding: 0 15px;
+                  }
+                  @media (max-width: 1230px) {
+                    padding: 0 10px;
+                  }
                 }
               }
               &:first-of-type {
