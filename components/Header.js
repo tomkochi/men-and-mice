@@ -1,10 +1,14 @@
+import Link from "next/link";
+
 const Header = () => {
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <a className="navbar-brand" href="#">
-          <img src="/img/logo-white.svg" width="76" alt="" />
-        </a>
+        <Link href="/">
+          <a className="navbar-brand" href="#">
+            <img src="/img/logo-white.svg" width="76" alt="" />
+          </a>
+        </Link>
         <button
           className="navbar-toggler border-0"
           type="button"
@@ -157,8 +161,8 @@ const Header = () => {
             ul {
               &.middle {
                 position: absolute;
-                left: 0;
-                right: 0;
+                left: 160px;
+                right: 160px;
                 display: flex;
                 justify-content: center;
                 @media (max-width: 1140px) {
