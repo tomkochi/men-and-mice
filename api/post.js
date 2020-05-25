@@ -42,11 +42,3 @@ export async function getPost(slug) {
       console.error(err);
     });
 }
-
-export default function getTags() {
-  const res = await fetch(
-    `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/tags/?key=693902285ff27989f7ad281cd8`
-  );
-  const { tags } = await res.json();
-  return tags;
-}
