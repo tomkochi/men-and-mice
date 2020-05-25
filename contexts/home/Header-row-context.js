@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import Axios from "axios";
 
 export const HeaderRowContext = createContext();
@@ -9,6 +9,7 @@ const HeaderRowContextProvider = (props) => {
   const [selectedTag, setSelectedTag] = useState({ name: "All", id: "All" });
   const sortOptions = ["Newest", "Oldest"];
   const [selectedSortOption, setSelectedSortOption] = useState(sortOptions[0]);
+  const [loadData, setLoadData] = useState("");
 
   return (
     <HeaderRowContext.Provider
@@ -18,10 +19,12 @@ const HeaderRowContextProvider = (props) => {
         setTags,
         selectedTag,
         sortOptions,
+        loadData,
         selectedSortOption,
         setSearch,
         setSelectedTag,
         setSelectedSortOption,
+        setLoadData,
       }}
     >
       {props.children}

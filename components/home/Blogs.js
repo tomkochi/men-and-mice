@@ -8,15 +8,12 @@ import { HeaderRowContext } from "../../contexts/home/Header-row-context";
 
 const Body = () => {
   const { blogs, setBlogs, page, setPage } = useContext(BlogsContext);
-  const { search, selectedTag, selectedSortOption } = useContext(
+  const { search, selectedTag, loadData, selectedSortOption } = useContext(
     HeaderRowContext
   );
   const [nextPage, setNextPage] = useState(1);
-  const [fetching, setFetching] = useState(false);
 
   const fetchData = (refresh) => {
-    if (fetching) return;
-    setFetching(true);
     let sortString;
     switch (selectedSortOption) {
       case "Newest":
@@ -40,15 +37,13 @@ const Body = () => {
         setBlogs(refresh ? [...res.data.posts] : [...blogs, ...res.data.posts]);
         setNextPage(res.data.meta.pagination.next);
       })
-      .catch((e) => {})
-      .finally(() => {
-        setFetching(false);
-      });
+      .catch((e) => {});
   };
 
   useEffect(() => {
     fetchData(true);
-  }, [selectedTag, selectedSortOption]);
+  }, [loadData]);
+
   return (
     <section className="body">
       <HeadRow />
