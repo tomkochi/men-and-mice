@@ -8,19 +8,6 @@ const api = new GhostContentAPI({
   version: "v3",
 });
 
-// export async function getSlugs() {
-//   const rt = [];
-//   api.posts.browse().then((posts) => {
-//     posts.map((post) => {
-//       rt.push({
-//         params: {
-//           slug: post.slug,
-//         },
-//       });
-//     });
-//     return rt;
-//   });
-// }
 export async function getSlugs() {
   const res = await fetch(
     `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&fields=slug`

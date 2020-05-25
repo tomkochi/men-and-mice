@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useContext, useState, useEffect } from "react";
 import { HeaderRowContext } from "../../contexts/home/Header-row-context";
 import Dropdown from "react-dropdown";
-import Axios from "axios";
 
 const HeadRow = (props) => {
   const router = useRouter();
@@ -26,22 +25,6 @@ const HeadRow = (props) => {
 
   const [tmpSearch, setTmpSearch] = useState("");
 
-  if (!tags.length) {
-    Axios.get(
-      "https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/tags/?key=693902285ff27989f7ad281cd8"
-    ).then((res) => {
-      const tags = res.data.tags.map((t) => {
-        return {
-          name: t.name,
-          id: t.id,
-        };
-      });
-      setTags([{ name: "All", id: "All" }, ...tags]);
-    });
-  }
-  useEffect(() => {
-    setLoadData(Math.random);
-  }, [selectedTag, selectedSortOption]);
   return (
     <div className="row top">
       <div className="left col-12 col-md-3 d-flex align-items-center">

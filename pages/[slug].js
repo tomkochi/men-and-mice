@@ -74,13 +74,13 @@ export default function Blog(props) {
                 dangerouslySetInnerHTML={{ __html: htmlContent }}
               ></div>
               <div className="d-flex tags">
-                {post.tags.map((tag) => {
+                {/* {post.tags.map((tag) => {
                   return (
                     <Link href={`/?tag=${tag.id}`} as="/" key={tag.id}>
                       <h2>{tag.name}</h2>
                     </Link>
                   );
-                })}
+                })} */}
               </div>
             </div>
             {/* .wrapper */}

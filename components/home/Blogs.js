@@ -13,36 +13,36 @@ const Body = () => {
   );
   const [nextPage, setNextPage] = useState(1);
 
-  const fetchData = (refresh) => {
-    let sortString;
-    switch (selectedSortOption) {
-      case "Newest":
-        sortString = "order=published_at DESC";
-        break;
-      case "Oldest":
-        sortString = "order=published_at ASC";
-        break;
-      default:
-        break;
-    }
-    const urlString = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=${
-      refresh ? 1 : page + 1
-    }${
-      selectedTag.name === "All" ? "" : `&filter=tags.id:${selectedTag.id}`
-    }&${sortString}`;
+  //api settings
+  const sort =
+    selectedSortOption == "Newest"
+      ? "order=published_at DESC"
+      : "order=published_at ASC";
 
-    Axios.get(encodeURI(urlString))
-      .then((res) => {
-        setPage(refresh ? 1 : page + 1);
-        setBlogs(refresh ? [...res.data.posts] : [...blogs, ...res.data.posts]);
-        setNextPage(res.data.meta.pagination.next);
-      })
-      .catch((e) => {});
-  };
-
+  const fetchApi = true;
+  const blogEndpoint = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&${sort}`;
+  //
+  const tagEndpoint = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&${sort}&filter=tags.id:${selectedTag.id}`;
+  //Api Call for all posts
+  const endpoint = selectedTag.id === "All" ? blogEndpoint : tagEndpoint;
   useEffect(() => {
-    fetchData(true);
-  }, [loadData]);
+    fetch(endpoint)
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        return response.posts;
+      })
+      .then((data) => {
+        setBlogs(data);
+        console.log(data);
+      })
+      .catch((error) => console.log(`there was an error ${error}`));
+  }, [selectedTag, selectedSortOption]);
+  //
+  function fetchData() {
+    console.log("fetch data called");
+  }
 
   return (
     <section className="body">
