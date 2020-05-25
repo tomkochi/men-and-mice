@@ -59,10 +59,12 @@ const Blog = ({ data }) => {
                   );
                 })}
               </div>
-              <div className="title">
-                <h3>{data.title}</h3>
-                <h3 className="with-underline">{data.title}</h3>
-              </div>
+              <Link href="/[slug]" as={`/${data.slug}`}>
+                <div className="title">
+                  <h3>{data.title}</h3>
+                  <h3 className="with-underline">{data.title}</h3>
+                </div>
+              </Link>
             </div>
           </div>
           <img
@@ -73,7 +75,7 @@ const Blog = ({ data }) => {
         </div>
         {/* .middle */}
         <div className="right col-2">
-          <Link href={`/${data.slug}`}>
+          <Link href="/[slug]" as={`/${data.slug}`}>
             <div className="read-link">
               Read
               <svg
@@ -95,7 +97,6 @@ const Blog = ({ data }) => {
 
       <style jsx>{`
         .blog {
-          cursor: pointer;
           * {
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
@@ -211,6 +212,7 @@ const Blog = ({ data }) => {
             }
             .title {
               position: relative;
+              cursor: pointer;
               h3 {
                 font-family: "Apercu Bold";
                 font-size: 36px;

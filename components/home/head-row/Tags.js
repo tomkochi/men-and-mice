@@ -1,8 +1,13 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
+import { useRouter } from "next/router";
 import { HeaderRowContext } from "../../../contexts/home/Header-row-context";
 
-const Tags = () => {
+const Tags = (props) => {
+  const router = useRouter();
   const { tags, selectedTag, setSelectedTag } = useContext(HeaderRowContext);
+  // if (router.query.tag !== undefined) {
+  //   setSelectedTag(tags.filter((tag) => tag.id === router.query.tag));
+  // }
   return (
     <>
       <div className="tag-nav-wrapper d-flex">

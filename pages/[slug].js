@@ -4,9 +4,11 @@ import Link from "next/link";
 import { getPost, getSlugs } from "../api/post";
 import remark from "remark";
 import html from "remark-html";
+import { useRouter } from "next/router";
 
 export default function Blog(props) {
   const post = props.postData;
+  const router = useRouter();
 
   let htmlContent;
   remark()
@@ -71,6 +73,15 @@ export default function Blog(props) {
                 className="html-content"
                 dangerouslySetInnerHTML={{ __html: htmlContent }}
               ></div>
+              <div className="d-flex tags">
+                {post.tags.map((tag) => {
+                  return (
+                    <Link href={`/?tag=${tag.id}`} as="/" key={tag.id}>
+                      <h2>{tag.name}</h2>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
             {/* .wrapper */}
           </div>
@@ -261,6 +272,20 @@ export default function Blog(props) {
                   }
                 }
               }
+              .tags {
+                h2 {
+                  font-family: "Apercu Regular";
+                  font-size: 14px;
+                  color: #442acc;
+                  margin-right: 35px;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                  transition: opacity 0.5s;
+                  &:hover {
+                    opacity: 0.6;
+                  }
+                }
+              }
             }
           }
           .footer {
@@ -335,13 +360,20 @@ export default function Blog(props) {
           margin-top: 70px;
           margin-bottom: 40px;
         }
-        .html-content code {
+        .html-content > code {
           display: flex;
           margin: 70px 0;
           width: 100%;
           overflow-x: auto;
           background: #f2f2f2;
           padding: 20px;
+        }
+        .html-content li code {
+          margin: 70px 0;
+          width: 100%;
+          overflow-x: auto;
+          background: #f2f2f2;
+          padding: 0 4px;
         }
         .html-content blockquote {
           font-family: "Capitolium Regular";

@@ -23,7 +23,7 @@ const api = new GhostContentAPI({
 // }
 export async function getSlugs() {
   const res = await fetch(
-    `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&&fields=slug`
+    `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&fields=slug`
   );
   const { posts } = await res.json();
   return posts.map((post) => {
@@ -41,4 +41,12 @@ export async function getPost(slug) {
     .catch((err) => {
       console.error(err);
     });
+}
+
+export default function getTags() {
+  const res = await fetch(
+    `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/tags/?key=693902285ff27989f7ad281cd8`
+  );
+  const { tags } = await res.json();
+  return tags;
 }

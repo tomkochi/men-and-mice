@@ -8,7 +8,7 @@ const HeaderRowContextProvider = (props) => {
   const [tags, setTags] = useState([]);
   const [selectedTag, setSelectedTag] = useState({ name: "All", id: "All" });
   const sortOptions = ["Newest", "Oldest"];
-  const [selectedSortOption, setSelectedSortOption] = useState(sortOptions[1]);
+  const [selectedSortOption, setSelectedSortOption] = useState(sortOptions[0]);
 
   return (
     <HeaderRowContext.Provider

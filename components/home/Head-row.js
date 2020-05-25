@@ -16,7 +16,6 @@ const HeadRow = () => {
         id: t.id,
       };
     });
-
     setTags([{ name: "All", id: "All" }, ...tags]);
   });
   return (

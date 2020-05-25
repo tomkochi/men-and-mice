@@ -5,9 +5,8 @@ import { BlogsContext } from "../../contexts/home/blogs-context";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Axios from "axios";
 import { HeaderRowContext } from "../../contexts/home/Header-row-context";
-console.log("A");
+
 const Body = () => {
-  console.log("a");
   const { blogs, setBlogs, page, setPage } = useContext(BlogsContext);
   const { search, selectedTag, selectedSortOption } = useContext(
     HeaderRowContext
@@ -53,7 +52,7 @@ const Body = () => {
   return (
     <section className="body">
       <HeadRow />
-      <div className={`blogs ${fetching ? "fetching" : ""}`}>
+      <div className="blogs">
         {blogs
           ? blogs.map((blog, i) => {
               return <Blog data={blog} key={i} />;

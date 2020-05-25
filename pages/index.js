@@ -4,7 +4,7 @@ import Home from "../components/Home";
 import HeaderRowContextProvider from "../contexts/home/Header-row-context";
 import BlogsContextProvider from "../contexts/home/blogs-context";
 
-export default function Index() {
+export default function Index(props) {
   return (
     <HeaderRowContextProvider>
       <BlogsContextProvider>
