@@ -15,6 +15,7 @@ const Body = () => {
   );
   const [nextPage, setNextPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const [componentLoaded, setComponentLoaded] = useState(false);
   const load = true;
 
@@ -60,10 +61,10 @@ const Body = () => {
   // filter.sort changed
   useEffect(() => {
     setTimeout(() => {
-      setBlogs([]);
       if (loading) return;
       console.log("filter loading");
       setLoading(true);
+      setRefreshing(true);
       setComponentLoaded(true);
       let sortString;
       switch (selectedSortOption) {
@@ -89,12 +90,16 @@ const Body = () => {
         .catch((e) => {})
         .finally(() => {
           setLoading(false);
+          setRefreshing(false);
         });
     }, 200);
   }, [selectedTag, selectedSortOption]);
 
   return (
-    <section className="body">
+    <section
+      className="body"
+      style={refreshing ? { opacity: 0.2 } : { opacity: 1 }}
+    >
       <HeadRow />
       <div className="blogs">
         {blogs
