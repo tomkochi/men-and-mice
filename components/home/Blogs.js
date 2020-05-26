@@ -5,44 +5,93 @@ import { BlogsContext } from "../../contexts/home/blogs-context";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Axios from "axios";
 import { HeaderRowContext } from "../../contexts/home/Header-row-context";
+import { useRouter } from "next/router";
 
 const Body = () => {
+  const router = useRouter();
   const { blogs, setBlogs, page, setPage } = useContext(BlogsContext);
   const { search, selectedTag, loadData, selectedSortOption } = useContext(
     HeaderRowContext
   );
   const [nextPage, setNextPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [componentLoaded, setComponentLoaded] = useState(false);
+  const load = true;
 
-  //api settings
-  const sort =
-    selectedSortOption == "Newest"
-      ? "order=published_at DESC"
-      : "order=published_at ASC";
-
-  const fetchApi = true;
-  const blogEndpoint = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&${sort}`;
-  //
-  const tagEndpoint = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&${sort}&filter=tags.id:${selectedTag.id}`;
-  //Api Call for all posts
-  const endpoint = selectedTag.id === "All" ? blogEndpoint : tagEndpoint;
+  // call initial load
   useEffect(() => {
-    fetch(endpoint)
-      .then((response) => {
-        return response.json();
+    // initialLoad();
+  }, [load]);
+
+  const loadNextPage = () => {
+    if (loading || !componentLoaded) return;
+    console.log("Next page");
+    setLoading(true);
+    let sortString;
+    switch (selectedSortOption) {
+      case "Newest":
+        sortString = "order=published_at DESC";
+        break;
+      case "Oldest":
+        sortString = "order=published_at ASC";
+        break;
+      default:
+        break;
+    }
+    const currentBlogs = blogs;
+    const urlString = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=${
+      page + 1
+    }${
+      selectedTag === "All" ? "" : `&filter=tags.id:${selectedTag}`
+    }&${sortString}`;
+    console.log(urlString);
+    Axios.get(encodeURI(urlString))
+      .then((res) => {
+        setBlogs([...currentBlogs, ...res.data.posts]);
+        setPage(page + 1);
+        setNextPage(res.data.meta.pagination.next);
       })
-      .then((response) => {
-        return response.posts;
-      })
-      .then((data) => {
-        setBlogs(data);
-        console.log(data);
-      })
-      .catch((error) => console.log(`there was an error ${error}`));
+      .catch((e) => {})
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  // filter.sort changed
+  useEffect(() => {
+    setTimeout(() => {
+      setBlogs([]);
+      if (loading) return;
+      console.log("filter loading");
+      setLoading(true);
+      setComponentLoaded(true);
+      let sortString;
+      switch (selectedSortOption) {
+        case "Newest":
+          sortString = "order=published_at DESC";
+          break;
+        case "Oldest":
+          sortString = "order=published_at ASC";
+          break;
+        default:
+          break;
+      }
+      const urlString = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=1${
+        selectedTag === "All" ? "" : `&filter=tags.id:${selectedTag}`
+      }&${sortString}`;
+      console.log(urlString);
+      Axios.get(encodeURI(urlString))
+        .then((res) => {
+          setBlogs(res.data.posts);
+          setPage(1);
+          setNextPage(res.data.meta.pagination.next);
+        })
+        .catch((e) => {})
+        .finally(() => {
+          setLoading(false);
+        });
+    }, 200);
   }, [selectedTag, selectedSortOption]);
-  //
-  function fetchData() {
-    console.log("fetch data called");
-  }
 
   return (
     <section className="body">
@@ -54,11 +103,13 @@ const Body = () => {
             })
           : ""}
       </div>
-      <InfiniteScroll
-        dataLength={blogs.length}
-        next={fetchData}
-        hasMore={nextPage}
-      ></InfiniteScroll>
+      <div className="mt-5">
+        <InfiniteScroll
+          dataLength={blogs.length}
+          next={loadNextPage}
+          hasMore={nextPage}
+        ></InfiniteScroll>
+      </div>
 
       <style jsx>{`
         .body {

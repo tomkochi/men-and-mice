@@ -1,7 +1,9 @@
 import Link from "next/link";
 import moment from "moment";
-
+import { useContext } from "react";
+import { HeaderRowContext } from "../../contexts/home/Header-row-context";
 const Blog = ({ data }) => {
+  const { setSelectedTag } = useContext(HeaderRowContext);
   const ext = () => {
     // get extention from filename
     const re = /(?:\.([^.]+))?$/;
@@ -33,10 +35,10 @@ const Blog = ({ data }) => {
               <div className="tags d-flex">
                 {data.tags.map((tag) => {
                   return (
-                    <a href="#" key={tag.id}>
+                    <h6 key={tag.id} onClick={() => setSelectedTag(tag.id)}>
                       {tag.name}
                       <span></span>
-                    </a>
+                    </h6>
                   );
                 })}
               </div>
@@ -175,13 +177,14 @@ const Blog = ({ data }) => {
               }
             }
             .tags {
-              a {
+              h6 {
                 font-family: "Apercu Regular";
                 font-size: 12px;
                 color: #ffdb00;
                 text-transform: uppercase;
                 margin-bottom: 12px;
                 text-decoration: none;
+                cursor: pointer;
                 span {
                   display: inline-block;
                   width: 20px;

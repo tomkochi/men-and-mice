@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useContext, useState, useEffect } from "react";
 import { HeaderRowContext } from "../../contexts/home/Header-row-context";
 import Dropdown from "react-dropdown";
+import Axios from "axios";
 
 const HeadRow = (props) => {
   const router = useRouter();
@@ -18,12 +19,27 @@ const HeadRow = (props) => {
     setSelectedSortOption,
   } = useContext(HeaderRowContext);
 
-  // select default tag if one passed via url query
-  if (router.query.tag !== undefined) {
-    setSelectedTag(tags.filter((tag) => tag.id === router.query.tag));
-  }
-
   const [tmpSearch, setTmpSearch] = useState("");
+  const [initial, setInitial] = useState(true);
+
+  useEffect(() => {
+    if (router.query.id) {
+      setSelectedTag(router.query.id);
+    } else {
+      setSelectedTag("All");
+    }
+    Axios.get(
+      "https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/tags/?key=693902285ff27989f7ad281cd8"
+    ).then((res) => {
+      const ts = res.data.tags.map((t) => {
+        return {
+          name: t.name,
+          id: t.id,
+        };
+      });
+      setTags([{ name: "All", id: "All" }, ...ts]);
+    });
+  }, [initial]);
 
   return (
     <div className="row top">
@@ -46,10 +62,10 @@ const HeadRow = (props) => {
               return (
                 <li
                   className={`tag-nav-item ${
-                    tag.name === selectedTag.name ? "active" : ""
+                    tag.id === selectedTag ? "active" : ""
                   }`}
                   key={tag.name}
-                  onClick={() => setSelectedTag(tag)}
+                  onClick={() => setSelectedTag(tag.id)}
                 >
                   {tag.name}
                 </li>

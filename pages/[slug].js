@@ -46,7 +46,11 @@ export default function Blog(props) {
               </Link>
               <div className="d-flex">
                 {post.tags.map((tag) => {
-                  return <h2 key={tag.id}>{tag.name}</h2>;
+                  return (
+                    <Link href={`/?id=${tag.id}`} as="/" key={tag.id}>
+                      <h2 key={tag.id}>{tag.name}</h2>
+                    </Link>
+                  );
                 })}
               </div>
               <h1>{post.title}</h1>
@@ -74,13 +78,13 @@ export default function Blog(props) {
                 dangerouslySetInnerHTML={{ __html: htmlContent }}
               ></div>
               <div className="d-flex tags">
-                {/* {post.tags.map((tag) => {
+                {post.tags.map((tag) => {
                   return (
-                    <Link href={`/?tag=${tag.id}`} as="/" key={tag.id}>
+                    <Link href={`/?id=${tag.id}`} as="/" key={tag.id}>
                       <h2>{tag.name}</h2>
                     </Link>
                   );
-                })} */}
+                })}
               </div>
             </div>
             {/* .wrapper */}
@@ -141,6 +145,15 @@ export default function Blog(props) {
                 color: #ffdb00;
                 text-transform: uppercase;
                 margin: 70px 25px 20px 0;
+                cursor: pointer;
+                -webkit-transition: all 0.2s;
+                -moz-transition: all 0.2s;
+                -ms-transition: all 0.2s;
+                -o-transition: all 0.2s;
+                transition: all 0.2s;
+                &:hover {
+                  opacity: 0.6;
+                }
               }
               h1 {
                 font-family: "Apercu Bold";
@@ -280,7 +293,11 @@ export default function Blog(props) {
                   margin-right: 35px;
                   text-transform: uppercase;
                   cursor: pointer;
-                  transition: opacity 0.5s;
+                  -webkit-transition: all 0.2s;
+                  -moz-transition: all 0.2s;
+                  -ms-transition: all 0.2s;
+                  -o-transition: all 0.2s;
+                  transition: all 0.2s;
                   &:hover {
                     opacity: 0.6;
                   }
