@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
 import Link from "next/link";
-import { getPost, getSlugs, slugs } from "../api/post";
+import { getPost, getSlugs } from "../api/post";
 import remark from "remark";
 import html from "remark-html";
 import { useRouter } from "next/router";
@@ -443,11 +443,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const postData = await getPost(params.slug);
-  const slugsData = await slugs();
   return {
     props: {
       postData,
-      slugsData,
     },
   };
 }

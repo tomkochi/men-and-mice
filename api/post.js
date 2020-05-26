@@ -1,4 +1,5 @@
 import GhostContentAPI from "@tryghost/content-api";
+import fetch from "node-fetch";
 
 // Create API instance with site credentials
 const api = new GhostContentAPI({
@@ -7,22 +8,11 @@ const api = new GhostContentAPI({
   version: "v3",
 });
 
-// export async function getSlugs() {
-//   const res = await fetch(
-//     `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&fields=slug`
-//   );
-//   const { posts } = await res.json();
-//   return posts.map((post) => {
-//     return {
-//       params: {
-//         slug: post.slug,
-//       },
-//     };
-//   });
-// }
-
 export async function getSlugs() {
-  const posts = await api.posts.browse({ fields: "slug" });
+  const res = await fetch(
+    `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&fields=slug`
+  );
+  const { posts } = await res.json();
   return posts.map((post) => {
     return {
       params: {
@@ -31,6 +21,17 @@ export async function getSlugs() {
     };
   });
 }
+
+// export async function slugs() {
+//   const posts = await api.posts.browse({ fields: "slug" });
+//   return posts.map((post) => {
+//     return {
+//       params: {
+//         slug: post.slug,
+//       },
+//     };
+//   });
+// }
 
 export async function getPost(slug) {
   return await api.posts

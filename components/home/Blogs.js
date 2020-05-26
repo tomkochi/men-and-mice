@@ -94,10 +94,7 @@ const Body = () => {
   }, [selectedTag, selectedSortOption]);
 
   return (
-    <section
-      className="body"
-      style={refreshing ? { opacity: 0.2 } : { opacity: 1 }}
-    >
+    <section className={`body ${refreshing ? "refreshing" : ""}`}>
       <HeadRow />
       <div className="blogs">
         {blogs
