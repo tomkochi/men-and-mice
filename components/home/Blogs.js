@@ -26,7 +26,6 @@ const Body = () => {
 
   const loadNextPage = () => {
     if (loading || !componentLoaded) return;
-    console.log("Next page");
     setLoading(true);
     let sortString;
     switch (selectedSortOption) {
@@ -45,7 +44,6 @@ const Body = () => {
     }${
       selectedTag === "All" ? "" : `&filter=tags.id:${selectedTag}`
     }&${sortString}`;
-    console.log(urlString);
     Axios.get(encodeURI(urlString))
       .then((res) => {
         setBlogs([...currentBlogs, ...res.data.posts]);
@@ -62,7 +60,6 @@ const Body = () => {
   useEffect(() => {
     setTimeout(() => {
       if (loading) return;
-      console.log("filter loading");
       setLoading(true);
       setRefreshing(true);
       setComponentLoaded(true);
@@ -78,9 +75,10 @@ const Body = () => {
           break;
       }
       const urlString = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=1${
-        selectedTag === "All" ? "" : `&filter=tags.id:${selectedTag}`
+        selectedTag === "All" || !selectedTag
+          ? ""
+          : `&filter=tags.id:${selectedTag}`
       }&${sortString}`;
-      console.log(urlString);
       Axios.get(encodeURI(urlString))
         .then((res) => {
           setBlogs(res.data.posts);
