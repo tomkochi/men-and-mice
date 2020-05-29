@@ -1,5 +1,5 @@
-import Blogs from "./home/Blogs";
-import Heading from "./home/Heading";
+import Blogs from "./blogs/Blogs";
+import Heading from "./blogs/Heading";
 
 const Home = () => {
   return (

@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./Main-header";
+import Footer from "./Main-footer";
 import "../public/css/global.css";
 
 const Layout = (props) => {

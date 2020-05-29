@@ -3,16 +3,13 @@ import { useRouter } from "next/router";
 const Footer = () => {
   const router = useRouter();
 
-  if (router.pathname === "/") {
-    return <></>;
-  }
   return (
     <>
       <div className="footer">
         <div className="container d-md-flex">
           <div className="logo">
             <a className="navbar-brand" href="#">
-              <img src="/img/logo-black.svg" alt="" />
+              <img src="/img/logo-only-black.svg" alt="" />
             </a>
           </div>
           {/* .logo */}
@@ -173,45 +170,6 @@ const Footer = () => {
               @media (max-width: 768px) {
                 margin-left: 0;
                 margin-right: 20px;
-              }
-              &:after,
-              &:before {
-                content: "";
-                position: absolute;
-                left: -1px;
-                top: -1px;
-                width: 40px;
-                height: 40px;
-                border: 1px solid rgba(34, 31, 32, 0.2);
-                -webkit-border-radius: 20px;
-                -moz-border-radius: 20px;
-                border-radius: 20px;
-              }
-              &:hover:after {
-                -webkit-transition: all 0.5s ease-in;
-                -moz-transition: all 0.5s ease-in;
-                -ms-transition: all 0.5s ease-in;
-                -o-transition: all 0.5s ease-in;
-                transition: all 0.5s ease-in;
-                -webkit-transform: scale(1.75);
-                -moz-transform: scale(1.75);
-                -ms-transform: scale(1.75);
-                -o-transform: scale(1.75);
-                transform: scale(1.75);
-                opacity: 0;
-              }
-              &:hover:before {
-                -webkit-transition: all 0.5s ease-in 0.25s;
-                -moz-transition: all 0.5s ease-in 0.25s;
-                -ms-transition: all 0.5s ease-in 0.25s;
-                -o-transition: all 0.5s ease-in 0.25s;
-                transition: all 0.5s ease-in 0.25s;
-                -webkit-transform: scale(1.75);
-                -moz-transform: scale(1.75);
-                -ms-transform: scale(1.75);
-                -o-transform: scale(1.75);
-                transform: scale(1.75);
-                opacity: 0;
               }
             }
           }

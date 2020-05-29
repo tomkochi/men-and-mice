@@ -1,6 +1,6 @@
-import Layout from "../components/Main-layout";
-import { useState } from "react";
+import Layout from "../components/Layout";
 import Head from "next/head";
+import { useState } from "react";
 
 const Index = () => {
   const [workSmarterPoints, setWorkSmarterPoints] = useState([
@@ -50,10 +50,11 @@ const Index = () => {
   return (
     <Layout>
       <Head>
-        <title>Men&amp;Mice</title>
+        <title>Men&amp;Mice - Automation</title>
       </Head>
+
       <div className="body">
-        <section className="hero d-flex align-items-center">
+        <section className="hero">
           <div className="container d-flex">
             <div className="hero-texts col">
               <h2>Automation</h2>
@@ -322,7 +323,6 @@ const Index = () => {
         {/* /.case-study */}
       </div>
       {/* /.body */}
-
       <style jsx>{`
         .container {
           width: calc(100vw - 100px);
@@ -334,9 +334,7 @@ const Index = () => {
         }
         section.hero {
           background: white;
-          //padding: 260px 0;
-          height: calc(100vh - 138px);
-          min-height: 500px;
+          padding: 260px 0;
           .hero-texts {
             h2 {
               font-family: "Apercu Bold";

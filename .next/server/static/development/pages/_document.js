@@ -924,7 +924,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       }
     }), __jsx("link", {
       rel: "preload",
-      href: "/fonts/apercu/apercu medium.otf",
+      href: "/fonts/apercu/apercu light.otf",
       as: "font",
       __self: this,
       __source: {
@@ -934,12 +934,22 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       }
     }), __jsx("link", {
       rel: "preload",
+      href: "/fonts/apercu/apercu medium.otf",
+      as: "font",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 11
+      }
+    }), __jsx("link", {
+      rel: "preload",
       href: "/fonts/apercu/apercu regular.otf",
       as: "font",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 11
       }
     }), __jsx("link", {
@@ -949,7 +959,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 11
       }
     }), __jsx("link", {
@@ -959,7 +969,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 11
       }
     }), __jsx("script", {
@@ -967,7 +977,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 33,
         columnNumber: 11
       }
     }), __jsx("script", {
@@ -975,7 +985,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33,
+        lineNumber: 34,
         columnNumber: 11
       }
     }), __jsx("script", {
@@ -983,28 +993,28 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
+        lineNumber: 35,
         columnNumber: 11
       }
     })), __jsx("body", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36,
+        lineNumber: 37,
         columnNumber: 9
       }
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37,
+        lineNumber: 38,
         columnNumber: 11
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 39,
         columnNumber: 11
       }
     })));

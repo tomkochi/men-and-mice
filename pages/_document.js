@@ -7,6 +7,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/css/bootstrap.css" />
           <link rel="preload" href="/fonts/apercu/apercu bold.otf" as="font" />
+          <link rel="preload" href="/fonts/apercu/apercu light.otf" as="font" />
           <link
             rel="preload"
             href="/fonts/apercu/apercu medium.otf"

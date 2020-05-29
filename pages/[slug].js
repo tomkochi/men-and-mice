@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Layout from "../components/Layout";
+import Layout from "../components/Blogs-layout";
 import Link from "next/link";
-import { getPost, getSlugs } from "../api/post";
+import { getPost, /*getSlugs,*/ slugs } from "../api/post";
 import remark from "remark";
 import html from "remark-html";
 import { useRouter } from "next/router";
@@ -434,7 +434,7 @@ export default function Blog(props) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getSlugs();
+  const paths = await slugs();
   return {
     paths,
     fallback: false,

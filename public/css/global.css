@@ -1,4 +1,8 @@
 @font-face {
+  font-family: "Apercu Light";
+  src: url("/fonts/apercu/apercu light.otf");
+}
+@font-face {
   font-family: "Apercu Regular";
   src: url("/fonts/apercu/apercu regular.otf");
 }
