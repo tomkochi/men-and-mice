@@ -1,8 +1,38 @@
 import Layout from "../components/Main-layout";
 import { useState } from "react";
 import Head from "next/head";
+import BottomPick from "../components/Bottom-pick";
 
-const Index = () => {
+const Customers = () => {
+  const [caseStudies, setCaseStudies] = useState([
+    {
+      heading: "Manufacturing",
+      description: "Business solutions for Central Bank of Austria",
+    },
+    {
+      heading: "Tech",
+      description:
+        "Migrating a Fortune 500 Multinational Tech Company to the Suite",
+    },
+    {
+      heading: "Tech",
+      description: "Delivering the Need for Speed for HBPO Group",
+    },
+    {
+      heading: "Health",
+      description: "Putting people first at Icelands National Hospital",
+    },
+    {
+      heading: "Education",
+      description:
+        "Finding a viable network solution for Texas Womans University",
+    },
+    {
+      Heading: "Manufacturing",
+      description:
+        "Clarity, Simplicity and Efficiency to the IP space for HD supply",
+    },
+  ]);
   return (
     <Layout>
       <Head>
@@ -12,23 +42,25 @@ const Index = () => {
         <section className="hero d-flex align-items-center">
           <div className="container d-flex">
             <div className="hero-texts col">
-              <h2>Customers</h2>
-              <h1>Replace your homegrown solutions.</h1>
+              <h2 className="f-ap-b">Customers</h2>
+              <h1 className="f-ap-b">Providing the best for our customers.</h1>
               <h2>
-                Contact a migration specialist
-                <svg
-                  width="20"
-                  height="19"
-                  viewBox="0 0 20 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                    stroke="#221F20"
-                    strokeWidth="2"
-                  />
-                </svg>
+                <a href="#" className="f-ap-b">
+                  Contact a migration specialist
+                  <svg
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
+                      stroke="#221F20"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </a>
               </h2>
             </div>
             {/* /.hero-texts */}
@@ -80,43 +112,36 @@ const Index = () => {
         </section>
         {/* ./hero */}
 
-        <section className="work-smarter">
+        <section className="challenges-solutions">
           <div className="container">
-            <h2>
-              Work
-              <br />
-              smarter<span>.</span>
-            </h2>
-            <div className="points w-100 d-flex flex-wrap justify-content-between">
-              {workSmarterPoints.map((p, i) => {
-                return (
-                  <div className="wrapper" key={i}>
-                    <div className="point">
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div className="left">{p.point}</div>
-                        {/* /.left */}
-                        <div className="right">
-                          {p.link}
-                          <svg
-                            width="20"
-                            height="19"
-                            viewBox="0 0 20 19"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                              stroke="#221F20"
-                              strokeWidth="2"
-                            />
-                          </svg>
-                        </div>
-                        {/* /.right */}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="points d-flex justify-content-between">
+              <div className="wrapper">
+                <div className="point">
+                  <h2 className="f-ap-b">Challenges</h2>
+                  <p className="f-ap-l">
+                    Realizing they had a single point of failure, this European
+                    media services company decided it needed to invest in a
+                    second DNS vendor for redundancy and looked to NS1’s
+                    Dedicated DNS solution.
+                  </p>
+                </div>
+                {/* /.point */}
+              </div>
+              {/* /.wrapper */}
+
+              <div className="wrapper">
+                <div className="point">
+                  <h2 className="f-ap-b">Solutions</h2>
+                  <p className="f-ap-l">
+                    After deploying the Men&Mice DNS solutions the team quickly
+                    realized they were outserving the traffic on the regular
+                    managed DNS. Today, Men&Mice serves more queries than the
+                    incumbent managed DNS solution.
+                  </p>
+                </div>
+                {/* /.point */}
+              </div>
+              {/* /.wrapper */}
             </div>
             {/* /.points */}
           </div>
@@ -128,10 +153,10 @@ const Index = () => {
             <div className="feature d-flex justify-content-between align-items-center">
               <div className="wrapper">
                 <div className="texts">
-                  <h2>
-                    Integrated layers<span>.</span>
+                  <h2 className="f-ap-b">
+                    Customers First<span>.</span>
                   </h2>
-                  <p>
+                  <p className="f-ap-l">
                     Knowing who did what, when and where on the network helps
                     network and cyber security teams.
                   </p>
@@ -143,8 +168,8 @@ const Index = () => {
               <div className="wrapper">
                 <div className="image">
                   <img src="/img/feature-1.png" />
-                  <div className="image-overlay">
-                    Dns management
+                  <div className="image-overlay f-ap-r">
+                    Professional Services
                     <svg
                       width="20"
                       height="19"
@@ -161,47 +186,6 @@ const Index = () => {
                   </div>
                 </div>
                 {/* /.image */}
-              </div>
-              {/* /.wrapper */}
-            </div>
-            {/* /.feature */}
-
-            <div className="feature d-flex justify-content-between align-items-center">
-              <div className="wrapper">
-                <div className="image">
-                  <img src="/img/feature-1.png" />
-                  <div className="image-overlay">
-                    Tracking solutions
-                    <svg
-                      width="20"
-                      height="19"
-                      viewBox="0 0 20 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                        stroke="#221F20"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                {/* /.image */}
-              </div>
-              {/* /.wrapper */}
-
-              <div className="wrapper">
-                <div className="texts">
-                  <h2>
-                    Stronger with tracking<span>.</span>
-                  </h2>
-                  <p>
-                    Knowing who did what, when and where on the network helps
-                    network and cyber security teams.
-                  </p>
-                </div>
-                {/* /.texts */}
               </div>
               {/* /.wrapper */}
             </div>
@@ -211,193 +195,127 @@ const Index = () => {
         </section>
         {/* /.features` */}
 
-        <section className="begin-integration">
+        <section className="read-case-studies">
           <div className="container">
-            <div className="points d-flex flex-wrap justify-content-between">
-              {integrationPoints.map((p, i) => {
+            <h2 className="f-ap-b">
+              Read the case studies<span>.</span>
+            </h2>
+            <ul className="case-navs list-unstyled d-flex">
+              <li className="case-nav f-ap-r">All</li>
+              <li className="case-nav active f-ap-r">Tech</li>
+              <li className="case-nav f-ap-r">Manufacturing</li>
+              <li className="case-nav f-ap-r">Education</li>
+              <li className="case-nav f-ap-r">Health</li>
+            </ul>
+            {/* /.case-navs */}
+            <div className="case-studies d-flex flex-wrap justify-content-between">
+              {caseStudies.map((c, i) => {
                 return (
                   <div className="wrapper" key={i}>
-                    <div className="point">
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div className="left">{p.text}</div>
-                        {/* /.left */}
-                        <div className="right">
-                          {p.link}
-                          <svg
-                            width="20"
-                            height="19"
-                            viewBox="0 0 20 19"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                              stroke="#442acc"
-                              strokeWidth="2"
-                            />
-                          </svg>
-                        </div>
-                        {/* /.right */}
-                      </div>
+                    <div className="case-study">
+                      <h3 className="f-ap-r">{c.heading}</h3>
+                      <h4 className="f-ap-r">{c.description}</h4>
                     </div>
                   </div>
                 );
               })}
             </div>
-            {/* /.points */}
+            {/* /.case-studies */}
           </div>
           {/* /.container */}
         </section>
-        {/* /.begin-intgration */}
+        {/* /section.read-case-studies */}
 
-        <section className="case-study">
-          <div className="container">
-            <div className="feature d-flex justify-content-between align-items-center">
-              <div className="wrapper">
-                <div className="texts">
-                  <h3>Case study</h3>
-                  <h2>
-                    Integrated layers<span>.</span>
-                  </h2>
-                  <p>
-                    Knowing who did what, when and where on the network helps
-                    network and cyber security teams.
-                  </p>
-                </div>
-                {/* /.texts */}
-              </div>
-              {/* /.wrapper */}
-
-              <div className="wrapper">
-                <div className="image">
-                  <img src="/img/feature-1.png" />
-                  <div className="image-overlay">
-                    Case study
-                    <svg
-                      width="20"
-                      height="19"
-                      viewBox="0 0 20 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                        stroke="#221F20"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                {/* /.image */}
-              </div>
-              {/* /.wrapper */}
-            </div>
-            {/* /.feature */}
-          </div>
+        <section className="get-in-touch">
+          <BottomPick
+            category="Get in touch"
+            heading="Operate smarter"
+            text="Knowing who did what, when and where on the network helps network and cyber security teams."
+            image="/img/feature-1.png"
+            image-text="Get a price quote"
+          />
         </section>
         {/* /.case-study */}
       </div>
       {/* /.body */}
 
       <style jsx>{`
-        .container {
-          width: calc(100vw - 100px);
-          max-width: 1300px;
-          margin: 0 auto;
-          @media (max-width: 768px) {
-            max-width: calc(100vw - 55px);
-          }
-        }
         section.hero {
           background: white;
           //padding: 260px 0;
           height: calc(100vh - 138px);
           min-height: 500px;
           .hero-texts {
-            h2 {
-              font-family: "Apercu Bold";
+            h2,
+            h2 a {
               font-size: 16px;
               color: #442acc;
               text-transform: uppercase;
               margin: 0 0 40px 0;
+              text-decoration: none;
+              svg {
+                margin-left: 18px;
+              }
             }
             h1 {
-              font-family: "Apercu Bold";
               font-size: 72px;
               color: #221f20;
               max-width: 647px;
               line-height: 110%;
               margin: 0;
+              margin-bottom: 54px;
             }
           }
         }
         /* setion.hero */
 
-        section.work-smarter {
+        section.challenges-solutions {
           background: #ffdb00;
-          padding: 140px 0;
+          padding: 210px 0;
           h2 {
-            font-family: "Apercu Bold";
-            font-size: 64px;
+            font-size: 36px;
             line-height: 110%;
             color: #221f20;
-            margin-bottom: 10px;
-            span {
-              color: #442acc;
-            }
+            margin-bottom: 30px;
+            line-height: 120%;
+          }
+          p {
+            font-size: 20px;
+            line-height: 150%;
+            color: #221f20;
           }
           .points {
-            .wrapper {
-              width: calc(50% - 45px);
-              padding: 60px 0;
-              border-bottom: 1px solid rgba(34, 31, 32, 0.16);
-              &:nth-last-of-type(-n + 2) {
-                border: none;
-              }
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              right: calc(50% + 100px);
+              top: 47%;
+              display: block;
+              width: 14px;
+              height: 14px;
+              background: url("/img/black-arrow-right.svg") no-repeat center;
             }
-            .point {
-              .left {
-                font-family: "Apercu Light";
-                font-size: 20px;
-                color: #221f20;
-                max-width: 250px;
-                line-height: 150%;
-              }
-              .right {
-                font-family: "Apercu Bold";
-                font-size: 17px;
-                color: #221f20;
-                text-transform: uppercase;
-                cursor: pointer;
-                transition: opacity 0.2s;
-                white-space: nowrap;
-                svg {
-                  margin-left: 18px;
-                  margin-top: -3px;
-                }
-                &:hover {
-                  opacity: 0.6;
-                }
+            .wrapper {
+              width: 50%;
+              .point {
+                width: calc(100% - 200px);
               }
             }
           }
         }
-        /* section.work-smarter */
+        /* section.challenges-solutions */
 
         section.features {
           background: white;
           padding: 120px 0;
           .container {
             .feature {
-              &:first-of-type {
-                margin-bottom: 100px;
-              }
               .wrapper {
                 width: calc(50% - 45px);
                 .texts {
                   max-width: 410px;
                   h2 {
-                    font-family: "Apercu Bold";
                     font-size: 64px;
                     line-height: 110%;
                     color: #221f20;
@@ -407,7 +325,6 @@ const Index = () => {
                     }
                   }
                   p {
-                    font-family: "Apercu Light";
                     font-size: 20px;
                     color: #221f20;
                   }
@@ -421,7 +338,6 @@ const Index = () => {
                     object-fit: cover;
                   }
                   .image-overlay {
-                    font-family: "Apercu Regular";
                     font-size: 17px;
                     color: #221f20;
                     text-transform: uppercase;
@@ -442,50 +358,60 @@ const Index = () => {
         }
         /* section.features */
 
-        section.begin-integration {
+        section.read-case-studies {
           background: white;
-          padding: 20px 0 180px 0;
-          .container {
-            .points {
-              .wrapper {
-                width: calc(50% - 45px);
-                padding: 60px 0;
-                border-bottom: 1px solid rgba(34, 31, 32, 0.16);
-                &:nth-last-of-type(-n + 2) {
-                  border: none;
+          padding: 80px 0 140px 0;
+          h2 {
+            font-size: 64px;
+            line-height: 110%;
+            max-width: 400px;
+            color: #221f20;
+            margin-bottom: 50px;
+            span {
+              color: #442acc;
+            }
+          }
+          ul {
+            margin-bottom: 12px;
+            li {
+              font-size: 16px;
+              margin-right: 30px;
+              text-transform: uppercase;
+              color: #6b6164;
+              cursor: pointer;
+              transition: all 0.2s;
+              &:hover {
+                color: #442acc;
+                opacity: 0.6;
+              }
+              &.active {
+                color: #442acc;
+              }
+            }
+          }
+          .case-studies {
+            .wrapper {
+              width: 50%;
+              .case-study {
+                width: calc(100% - 210px);
+                padding-top: 100px;
+                h3 {
+                  font-size: 16px;
+                  margin-bottom: 30px;
+                  text-transform: uppercase;
+                  color: #442acc;
                 }
-                .point {
-                  .left {
-                    font-family: "Apercu Light";
-                    font-size: 20px;
-                    color: #221f20;
-                    max-width: 340px;
-                    line-height: 150%;
-                  }
-                  .right {
-                    font-family: "Apercu Bold";
-                    font-size: 17px;
-                    color: #442acc;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    transition: opacity 0.2s;
-                    white-space: nowrap;
-                    svg {
-                      margin-left: 18px;
-                      margin-top: -3px;
-                    }
-                    &:hover {
-                      opacity: 0.6;
-                    }
-                  }
+                h4 {
+                  font-size: 36px;
+                  line-height: 130%;
+                  color: #221f20;
                 }
               }
             }
           }
         }
-        /* .begin-integration */
 
-        section.case-study {
+        section.get-in-touch {
           background: #221f20;
           padding: 110px 0;
           .container {
@@ -494,14 +420,12 @@ const Index = () => {
               .texts {
                 max-width: 410px;
                 h3 {
-                  font-family: "Apercu Regular";
                   font-size: 16px;
                   color: #ffdb00;
                   text-transform: uppercase;
                   margin-bottom: 40px;
                 }
                 h2 {
-                  font-family: "Apercu Bold";
                   font-size: 64px;
                   line-height: 110%;
                   color: white;
@@ -511,7 +435,6 @@ const Index = () => {
                   }
                 }
                 p {
-                  font-family: "Apercu Light";
                   font-size: 24px;
                   color: white;
                 }
@@ -525,7 +448,6 @@ const Index = () => {
                   object-fit: cover;
                 }
                 .image-overlay {
-                  font-family: "Apercu Regular";
                   font-size: 17px;
                   color: #221f20;
                   text-transform: uppercase;
@@ -548,4 +470,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Customers;

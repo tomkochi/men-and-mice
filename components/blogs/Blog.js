@@ -1,7 +1,7 @@
 import Link from "next/link";
 import moment from "moment";
 import { useContext } from "react";
-import { HeaderRowContext } from "../../contexts/home/Header-row-context";
+import { HeaderRowContext } from "../../contexts/Header-row-context";
 const Blog = ({ data }) => {
   const { setSelectedTag } = useContext(HeaderRowContext);
   const ext = () => {
@@ -42,7 +42,7 @@ const Blog = ({ data }) => {
                   );
                 })}
               </div>
-              <Link href="/[slug]" as={`/${data.slug}`}>
+              <Link href="/blogs/[slug]" as={`/blogs/${data.slug}`}>
                 <div className="title">
                   <h3>{data.title}</h3>
                   <h3 className="with-underline">{data.title}</h3>
@@ -58,8 +58,8 @@ const Blog = ({ data }) => {
         </div>
         {/* .middle */}
         <div className="right col-2">
-          <Link href="/[slug]" as={`/${data.slug}`}>
-            <div className="read-link">
+          <Link href="/blogs/[slug]" as={`/blogs/${data.slug}`} passHref>
+            <a className="read-link">
               Read
               <svg
                 className="ml-2"
@@ -71,7 +71,7 @@ const Blog = ({ data }) => {
               >
                 <path d="M1 11L6 6L1 1" stroke="#757575" strokeWidth="2" />
               </svg>
-            </div>
+            </a>
           </Link>
         </div>
         {/* .right */}
@@ -230,6 +230,7 @@ const Blog = ({ data }) => {
               font-size: 20px;
               color: #b7b6b6;
               cursor: pointer;
+              text-decoration: none;
               &:hover {
                 color: #ffffff;
               }

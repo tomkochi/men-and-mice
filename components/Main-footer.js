@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Footer = () => {
   const router = useRouter();
@@ -8,9 +9,11 @@ const Footer = () => {
       <div className="footer">
         <div className="container d-md-flex">
           <div className="logo">
-            <a className="navbar-brand" href="#">
-              <img src="/img/logo-black.svg" width="138" alt="" />
-            </a>
+            <Link href="/" passHref>
+              <a className="navbar-brand">
+                <img src="/img/logo-black.svg" width="138" alt="" />
+              </a>
+            </Link>
           </div>
           {/* .logo */}
           <div className="d-flex w-100 justify-content-between">
@@ -212,7 +215,7 @@ const Footer = () => {
                   font-family: "Apercu Regular";
                   font-size: 14px;
                   color: white;
-                  opacity: 0.8;
+                  opacity: 0.6;
                   text-decoration: none;
                   -webkit-transition: all time;
                   -moz-transition: all 0.5s;
@@ -227,7 +230,8 @@ const Footer = () => {
                     bottom: 0;
                     width: 0;
                     height: 2px;
-                    background: #221f20;
+                    background: white;
+                    opacity: 0.6;
                     -webkit-transition: width 0.5s ease-in;
                     -moz-transition: width 0.5s ease-in;
                     -ms-transition: width 0.5s ease-in;

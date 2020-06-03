@@ -24,7 +24,6 @@
 }
 html,
 body {
-  background: #221f20;
   padding: 0;
   margin: 0;
   width: 100vw;
@@ -45,6 +44,9 @@ label:focus,
   outline: 0px !important;
   -webkit-appearance: none;
   box-shadow: none !important;
+}
+.f-ap-l {
+  font-family: "Apercu Light";
 }
 .f-ap-r {
   font-family: "Apercu Regular";
@@ -69,5 +71,13 @@ label:focus,
 @media (max-width: 767px) {
   .home {
     width: calc(100vw - 30px);
+  }
+}
+.container {
+  width: calc(100vw - 100px);
+  max-width: 1300px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    max-width: calc(100vw - 55px);
   }
 }

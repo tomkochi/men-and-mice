@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import Blog from "./Blog";
 import HeadRow from "./Head-row";
-import { BlogsContext } from "../../contexts/home/blogs-context";
+import { BlogsContext } from "../../contexts/blogs-context";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Axios from "axios";
-import { HeaderRowContext } from "../../contexts/home/Header-row-context";
+import { HeaderRowContext } from "../../contexts/Header-row-context";
 import { useRouter } from "next/router";
 
 const Body = () => {
@@ -17,12 +17,6 @@ const Body = () => {
   const [loading, setLoading] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [componentLoaded, setComponentLoaded] = useState(false);
-  const load = true;
-
-  // call initial load
-  useEffect(() => {
-    // initialLoad();
-  }, [load]);
 
   const loadNextPage = () => {
     if (loading || !componentLoaded) return;
@@ -94,7 +88,7 @@ const Body = () => {
   }, [selectedTag, selectedSortOption]);
 
   return (
-    <section className={`body ${refreshing ? "refreshing" : ""}`}>
+    <section className="body">
       <HeadRow />
       <div className="blogs">
         {blogs

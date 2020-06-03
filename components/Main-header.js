@@ -23,27 +23,27 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav middle">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link f-ap-m" href="#">
                 Why us?
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link f-ap-m" href="#">
                 Products
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Customers
-              </a>
+              <Link href="/customers" passHref>
+                <a className="nav-link f-ap-m">Customers</a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link f-ap-m" href="#">
                 Resources
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link f-ap-m" href="#">
                 Support
               </a>
             </li>
@@ -143,7 +143,7 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item pl-3">
-              <a className="nav-link free-trial" href="#">
+              <a className="nav-link free-trial f-ap-m" href="#">
                 <button>Free trial</button>
               </a>
             </li>
@@ -159,11 +159,15 @@ const Header = () => {
             @media (max-width: 1030px) {
               padding: 30px;
             }
+            .navbar-brand {
+              position: relative;
+              z-index: 3000;
+            }
             ul {
               &.middle {
                 position: absolute;
-                left: 160px;
-                right: 160px;
+                left: 0;
+                right: 0;
                 display: flex;
                 justify-content: center;
                 @media (max-width: 1140px) {
@@ -217,7 +221,6 @@ const Header = () => {
                 position: relative;
                 text-align: center;
                 a {
-                  font-family: "Apercu Medium";
                   font-size: 18px;
                   color: #221f20 !important;
                   svg * {

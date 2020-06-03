@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useContext, useState, useEffect } from "react";
-import { HeaderRowContext } from "../../contexts/home/Header-row-context";
+import { HeaderRowContext } from "../../contexts/Header-row-context";
 import Dropdown from "react-dropdown";
 import Axios from "axios";
 

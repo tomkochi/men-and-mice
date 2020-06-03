@@ -1,16 +1,21 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Footer = () => {
   const router = useRouter();
-
-  return (
+  // prevent footer for "/blogs" route.
+  return router.pathname === "/blogs" ? (
+    ""
+  ) : (
     <>
       <div className="footer">
         <div className="container d-md-flex">
           <div className="logo">
-            <a className="navbar-brand" href="#">
-              <img src="/img/logo-only-black.svg" alt="" />
-            </a>
+            <Link href="/blogs" passHref>
+              <a className="navbar-brand">
+                <img src="/img/logo-only-black.svg" alt="" />
+              </a>
+            </Link>
           </div>
           {/* .logo */}
           <div className="navigation">
@@ -81,12 +86,6 @@ const Footer = () => {
           background: #ffdb00;
           padding: 90px 0 150px 0;
           .container {
-            width: calc(100vw - 100px);
-            max-width: 1300px;
-            margin: 0 auto;
-            @media (max-width: 768px) {
-              max-width: calc(100vw - 55px);
-            }
             .logo {
               margin-right: 210px;
               margin-bottom: 30px;

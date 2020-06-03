@@ -905,7 +905,9 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       }
     }, __jsx("link", {
       rel: "stylesheet",
-      href: "/css/bootstrap.css",
+      href: "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css",
+      integrity: "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk",
+      crossorigin: "anonymous",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -913,38 +915,16 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "preload",
       href: "/fonts/apercu/apercu bold.otf",
       as: "font",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9,
+        lineNumber: 15,
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "preload",
       href: "/fonts/apercu/apercu light.otf",
-      as: "font",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10,
-        columnNumber: 11
-      }
-    }), __jsx("link", {
-      rel: "preload",
-      href: "/fonts/apercu/apercu medium.otf",
-      as: "font",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11,
-        columnNumber: 11
-      }
-    }), __jsx("link", {
-      rel: "preload",
-      href: "/fonts/apercu/apercu regular.otf",
       as: "font",
       __self: this,
       __source: {
@@ -953,68 +933,90 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "preload",
+      href: "/fonts/apercu/apercu medium.otf",
+      as: "font",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17,
+        columnNumber: 11
+      }
+    }), __jsx("link", {
+      href: "/fonts/apercu/apercu regular.otf",
+      as: "font",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18,
+        columnNumber: 11
+      }
+    }), __jsx("link", {
       href: "/fonts/capitolium/Capitolium2-Bold.otf",
       as: "font",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 20,
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "preload",
       href: "/fonts/capitolium/Capitolium2-Regular.otf",
       as: "font",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 21,
         columnNumber: 11
       }
     }), __jsx("script", {
-      src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
+      src: "https://code.jquery.com/jquery-3.5.1.slim.min.js",
+      integrity: "sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj",
+      crossorigin: "anonymous",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 11
+      }
+    }), __jsx("script", {
+      src: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
+      integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo",
+      crossorigin: "anonymous",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28,
+        columnNumber: 11
+      }
+    }), __jsx("script", {
+      src: "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js",
+      integrity: "sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI",
+      crossorigin: "anonymous",
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 33,
         columnNumber: 11
       }
-    }), __jsx("script", {
-      src: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34,
-        columnNumber: 11
-      }
-    }), __jsx("script", {
-      src: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35,
-        columnNumber: 11
-      }
     })), __jsx("body", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37,
+        lineNumber: 39,
         columnNumber: 9
       }
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 40,
         columnNumber: 11
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39,
+        lineNumber: 41,
         columnNumber: 11
       }
     })));

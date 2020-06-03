@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <Link href="/">
-          <a className="navbar-brand" href="#">
+        <Link href="/blogs" passHref>
+          <a className="navbar-brand">
             <img src="/img/logo-only-white.svg" width="76" alt="" />
           </a>
         </Link>
@@ -33,9 +33,9 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Customers
-              </a>
+              <Link href="/customers" passHref>
+                <a className="nav-link">Customers</a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
@@ -158,11 +158,15 @@ const Header = () => {
             @media (max-width: 1030px) {
               padding: 30px;
             }
+            .navbar-brand {
+              position: relative;
+              z-index: 3000;
+            }
             ul {
               &.middle {
                 position: absolute;
-                left: 160px;
-                right: 160px;
+                left: 0;
+                right: 0;
                 display: flex;
                 justify-content: center;
                 @media (max-width: 1140px) {

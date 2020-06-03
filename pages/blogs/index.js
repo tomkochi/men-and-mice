@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Layout from "../components/Blogs-layout";
-import Home from "../components/Blogs";
-import HeaderRowContextProvider from "../contexts/home/Header-row-context";
-import BlogsContextProvider from "../contexts/home/blogs-context";
+import Layout from "../../components/Blogs-layout";
+import Blogs from "../../components/Blogs";
+import HeaderRowContextProvider from "../../contexts/Header-row-context";
+import BlogsContextProvider from "../../contexts/blogs-context";
 
 export default function Index(props) {
   return (
@@ -11,8 +11,9 @@ export default function Index(props) {
         <Layout>
           <Head>
             <title>Men &amp; Mice - Blog</title>
+            <style>{"body { background-color: #221f20; }"}</style>
           </Head>
-          <Home />
+          <Blogs />
         </Layout>
       </BlogsContextProvider>
     </HeaderRowContextProvider>

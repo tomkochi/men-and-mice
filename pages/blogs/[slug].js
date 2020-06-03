@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Layout from "../components/Blogs-layout";
+import Layout from "../../components/Blogs-layout";
 import Link from "next/link";
-import { getPost, /*getSlugs,*/ slugs } from "../api/post";
+import { getPost, getSlugs } from "../../api/post";
 import remark from "remark";
 import html from "remark-html";
 import { useRouter } from "next/router";
@@ -20,41 +20,51 @@ export default function Blog(props) {
   return (
     <Layout>
       <Head>
-        <title>Men &amp; Mice - blog</title>
+        <title>Men &amp; Mice - {post.title}</title>
+        <style>{"body { background-color: #221f20; }"}</style>
       </Head>
       <div className="blog">
         <div className="body">
           <div className="head">
             <div className="wrapper">
-              <Link href="/">
-                <a href="#" className="text-decoration-none">
-                  <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 13 13"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.25 11.7502L2 6.50024L7.25 1.25024"
-                      stroke="#FFDB00"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                  Articles
-                </a>
-              </Link>
+              <a
+                className="back f-ap-b"
+                onClick={(e) => {
+                  e.preventDefault();
+                  router.back();
+                }}
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.25 11.7502L2 6.50024L7.25 1.25024"
+                    stroke="#FFDB00"
+                    strokeWidth="2"
+                  />
+                </svg>
+                Articles
+              </a>
+
               <div className="d-flex">
                 {post.tags.map((tag) => {
                   return (
-                    <Link href={`/?id=${tag.id}`} as="/" key={tag.id}>
-                      <h2 key={tag.id}>{tag.name}</h2>
+                    <Link
+                      href={{ pathname: "/blogs", query: { id: tag.id } }}
+                      as="/blogs"
+                      key={tag.id}
+                    >
+                      <a className="f-ap-b">{tag.name}</a>
                     </Link>
                   );
                 })}
               </div>
-              <h1>{post.title}</h1>
-              <p>{post.excerpt}</p>
+              <h1 className="f-ap-b">{post.title}</h1>
+              <p className="f-cap-r">{post.excerpt}</p>
               <img src={post.feature_image} className="post-image" alt="" />
             </div>
             {/* .wrapper */}
@@ -80,8 +90,13 @@ export default function Blog(props) {
               <div className="d-flex tags">
                 {post.tags.map((tag) => {
                   return (
-                    <Link href={`/?id=${tag.id}`} as="/" key={tag.id}>
-                      <h2>{tag.name}</h2>
+                    <Link
+                      href={{ pathname: "/blogs", query: { id: tag.id } }}
+                      as="/blogs"
+                      key={tag.id}
+                      passHref
+                    >
+                      <a className="f-ab-r">{tag.name}</a>
                     </Link>
                   );
                 })}
@@ -92,11 +107,11 @@ export default function Blog(props) {
           {/* content */}
           <div className="footer">
             <div className="wrapper">
-              <h3>Enjoyed the article?</h3>
-              <button className="read-more">
+              <h3 className="f-ap-b">Enjoyed the article?</h3>
+              <button className="read-more f-ap-m">
                 READ MORE <img src="/img/caret-right-black.png" alt="" />
               </button>
-              <h4>Share on Social Media</h4>
+              <h4 className="f-ap-r">Share on Social Media</h4>
               <div className="social-icons d-flex">
                 <a href="#" className="icon">
                   <img src="/img/facebook.svg" width="20" alt="" />
@@ -132,20 +147,12 @@ export default function Blog(props) {
             position: relative;
             .wrapper {
               a {
-                font-family: "Apercu Bold";
-                font-size: 18px;
-                color: #ffffff;
-                svg {
-                  margin-right: 12px;
-                }
-              }
-              h2 {
-                font-family: "Apercu Regular";
                 font-size: 12px;
                 color: #ffdb00;
                 text-transform: uppercase;
                 margin: 70px 25px 20px 0;
                 cursor: pointer;
+                text-decoration: none;
                 -webkit-transition: all 0.2s;
                 -moz-transition: all 0.2s;
                 -ms-transition: all 0.2s;
@@ -155,8 +162,15 @@ export default function Blog(props) {
                   opacity: 0.6;
                 }
               }
+              a.back {
+                font-size: 18px;
+                color: #ffffff;
+                text-transform: capitalize;
+                svg {
+                  margin-right: 12px;
+                }
+              }
               h1 {
-                font-family: "Apercu Bold";
                 font-size: 48px;
                 color: #ffffff;
                 margin-bottom: 35px;
@@ -165,7 +179,6 @@ export default function Blog(props) {
                 }
               }
               p {
-                font-family: "Capitolium Regular";
                 font-size: 20px;
                 color: #ffffff;
               }
@@ -258,7 +271,6 @@ export default function Blog(props) {
               ul {
                 li {
                   a {
-                    font-family: "Apercu Bold";
                     font-size: 14px;
                     color: #442acc;
                     margin-right: 35px;
@@ -286,13 +298,13 @@ export default function Blog(props) {
                 }
               }
               .tags {
-                h2 {
-                  font-family: "Apercu Regular";
+                a {
                   font-size: 14px;
                   color: #442acc;
                   margin-right: 35px;
                   text-transform: uppercase;
                   cursor: pointer;
+                  text-decoration: none;
                   -webkit-transition: all 0.2s;
                   -moz-transition: all 0.2s;
                   -ms-transition: all 0.2s;
@@ -310,23 +322,21 @@ export default function Blog(props) {
             text-align: center;
             border: none !important;
             h3 {
-              font-family: "Apercu Bold";
               font-size: 36px;
               margin-bottom: 30px;
             }
             button {
-              font-family: "Apercu Medium";
               font-size: 18px;
               width: 190px;
               height: 75px;
               border: none;
+              padding-top: 5px;
               background: #ffdb00;
               img {
                 margin-left: 15px;
               }
             }
             h4 {
-              font-family: "Apercu Regular";
               font-size: 16px;
               opacity: 0.6;
               margin: 68px 0 20px 0;
@@ -434,7 +444,7 @@ export default function Blog(props) {
 }
 
 export async function getStaticPaths() {
-  const paths = await slugs();
+  const paths = await getSlugs();
   return {
     paths,
     fallback: false,
