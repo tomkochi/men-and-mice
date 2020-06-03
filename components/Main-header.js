@@ -23,9 +23,7 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav middle">
             <li className="nav-item">
-              <a className="nav-link f-ap-m" href="#">
-                Why us?
-              </a>
+              <a className="nav-link f-ap-m">Why us?</a>
             </li>
             <li className="nav-item">
               <a className="nav-link f-ap-m" href="#">
