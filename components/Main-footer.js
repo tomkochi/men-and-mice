@@ -1,17 +1,26 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = (props) => {
   const router = useRouter();
+  const { yellowfooter } = props;
 
   return (
     <>
-      <div className="footer">
+      <div className={`footer ${yellowfooter ? "yellow" : ""}`}>
         <div className="container d-md-flex">
           <div className="logo">
             <Link href="/" passHref>
               <a className="navbar-brand">
-                <img src="/img/logo-black.svg" width="138" alt="" />
+                <img
+                  src={`/img/${
+                    yellowfooter
+                      ? "logo-two-lines-black.svg"
+                      : "logo-two-lines-white.svg"
+                  }`}
+                  width="138"
+                  alt=""
+                />
               </a>
             </Link>
           </div>
@@ -162,16 +171,32 @@ const Footer = () => {
         <div className="container social">
           <div className="d-flex">
             <a href="#" className="follow">
-              <img src="/img/facebook-white.svg" alt="" />
+              {yellowfooter ? (
+                <img src="/img/facebook.svg" alt="" />
+              ) : (
+                <img src="/img/facebook-white.svg" alt="" />
+              )}
             </a>
             <a href="#" className="follow">
-              <img src="/img/linked-in-white.svg" alt="" />
+              {yellowfooter ? (
+                <img src="/img/linked-in.svg" alt="" />
+              ) : (
+                <img src="/img/linked-in-white.svg" alt="" />
+              )}
             </a>
             <a href="#" className="follow">
-              <img src="/img/youtube-white.svg" alt="" />
+              {yellowfooter ? (
+                <img src="/img/youtube.svg" alt="" />
+              ) : (
+                <img src="/img/youtube-white.svg" alt="" />
+              )}
             </a>
             <a href="#" className="follow">
-              <img src="/img/twitter-white.svg" alt="" />
+              {yellowfooter ? (
+                <img src="/img/twitter.svg" alt="" />
+              ) : (
+                <img src="/img/twitter-white.svg" alt="" />
+              )}
             </a>
           </div>
         </div>
@@ -181,7 +206,22 @@ const Footer = () => {
       <style jsx>{`
         .footer {
           background: #282426;
-          padding: 90px 0 150px 0;
+          padding: 90px 0;
+          &.yellow {
+            background: #ffdb00;
+            .container {
+              h4 {
+                color: #221f20;
+              }
+              ul li a,
+              h4 {
+                color: #221f20;
+              }
+            }
+            .copyright {
+              color: #221f20;
+            }
+          }
           .container {
             width: calc(100vw - 100px);
             max-width: 1300px;

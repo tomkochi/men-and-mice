@@ -6,7 +6,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
         <Link href="/">
           <a className="navbar-brand" href="#">
-            <img src="/img/logo-white.svg" width="240" alt="" />
+            <img src="/img/logo-one-line-black.svg" width="240" alt="" />
           </a>
         </Link>
         <button

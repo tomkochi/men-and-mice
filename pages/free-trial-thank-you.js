@@ -35,7 +35,7 @@ const FreeTrial = () => {
   return (
     <Layout yellowfooter>
       <Head>
-        <title>Men &amp; Mice - Free trial</title>
+        <title>Men &amp; Mice - Thanks!</title>
       </Head>
       <div className="free-trial">
         <div className="body">
@@ -43,68 +43,53 @@ const FreeTrial = () => {
             <div className="container">
               <h2 className="f-ap-r">Get in touch</h2>
               <h1 className="f-ap-b">
-                Start your free trial<span>.</span>
+                Thank you for giving the Men&Mice Suite a try!
               </h1>
               <p className="f-ap-l">
-                Try our API-driven, software-defined modular overlay solution
-                for IP Management in a multicloud network environment.
+                We aim to keep installation as simple and painless as possible.
+                But if you have any questions or need some added support, please
+                feel free to contact us at{" "}
+                <a href="mailto:support@menandmice.com">
+                  support@menandmice.com
+                </a>
               </p>
-              <h2 className="f-ap-r">
-                Sign up for a free trial{" "}
-                <svg
-                  width="14"
-                  height="16"
-                  viewBox="0 0 14 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.818482 7.98086L6.9971 14.1595M6.9971 14.1595L13.1757 7.98086M6.9971 14.1595L6.99639 0.159424"
-                    stroke="#442ACC"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </h2>
             </div>
             {/* /.container */}
           </section>
           {/* /.hero */}
 
-          <section className="start-trial-points">
+          <section className="steps">
             <div className="container">
-              <h2 className="f-ap-b">Start your 30 day free trial and enjoy</h2>
-              <div className="points d-flex flex-wrap justify-content-between">
-                {freeTrialPoints.map((p, i) => {
-                  return (
-                    <div className="wrapper">
-                      <div className="point">
-                        <h3 className="f-ap-r">{p.heading}</h3>
-                        <p className="f-ap-l">{p.description}</p>
-                      </div>
-                      {/* /.point */}
-                    </div>
-                  );
-                })}
+              <div className="points">
+                <div className="point">
+                  <h3 className="f-ap-r">Step 1</h3>
+                  <p className="f-ap-l">
+                    Start your evaluation at the{" "}
+                    <a href="#">Men&Mice Suite Download Page</a>
+                  </p>
+                </div>
+                {/* /.point */}
+                <div className="point">
+                  <h3 className="f-ap-r">Step 2</h3>
+                  <p className="f-ap-l">
+                    Check your inbox for step-by-step instructions to walk you
+                    through your trial of the Men&Mice Suite.
+                  </p>
+                </div>
+                {/* /.point */}
               </div>
               {/* /.points */}
             </div>
             {/* /.container */}
           </section>
-          {/* /.start-trial-points */}
-
-          <section className="form">
-            <div className="container">
-              <h4>Form here</h4>
-            </div>
-            {/* /.container */}
-          </section>
-          {/* /.form */}
+          {/* /.steps */}
         </div>
         {/* .body */}
       </div>
       <style jsx>{`
         .body {
           section.hero {
+            padding: 140px 0 50px 0;
             h2 {
               font-size: 16px;
               color: #442acc;
@@ -118,21 +103,30 @@ const FreeTrial = () => {
               font-size: 64px;
               color: #221f20;
               line-height: 120%;
-              max-width: 420px;
+              max-width: 800px;
               margin-bottom: 24px;
             }
             p {
               font-size: 20px;
               color: #221f20;
-              max-width: 420px;
-              margin-bottom: 50px;
+              max-width: 800px;
               line-height: 150%;
+              a {
+                color: #442acc;
+                text-decoration: none;
+                &:hover {
+                  opacity: 0.6;
+                }
+              }
             }
           }
 
-          section.start-trial-points {
-            background: #ffdb00;
-            padding: 140px 0;
+          section.steps {
+            .container {
+              background: #ffdb00;
+              padding: 100px;
+              margin: 110px auto;
+            }
             h2 {
               font-size: 36px;
               color: #221f20;
@@ -140,29 +134,30 @@ const FreeTrial = () => {
               max-width: 350px;
             }
             .points {
-              .wrapper {
-                width: calc(100% / 3 - 80px);
-                .point {
-                  margin-top: 80px;
-                  width: 100%;
-                  h3 {
-                    font-size: 20px;
-                    color: #000000;
-                    line-height: 170%;
-                    margin-bottom: 16px;
-                  }
-                  p {
-                    font-size: 18px;
-                    color: #000000;
-                    line-height: 150%;
+              .point {
+                &:first-of-type {
+                  margin-bottom: 60px;
+                }
+                h3 {
+                  font-size: 20px;
+                  color: #000000;
+                  line-height: 170%;
+                  margin-bottom: 16px;
+                }
+                p {
+                  font-size: 18px;
+                  color: #000000;
+                  line-height: 150%;
+                  a {
+                    color: #442acc;
+                    text-decoration: none;
+                    &:hover {
+                      opacity: 0.6;
+                    }
                   }
                 }
               }
             }
-          }
-
-          section.form {
-            padding: 140px 0;
           }
         }
       `}</style>
