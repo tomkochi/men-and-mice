@@ -76,7 +76,7 @@ const FreeTrial = () => {
               <div className="points d-flex flex-wrap justify-content-between">
                 {freeTrialPoints.map((p, i) => {
                   return (
-                    <div className="wrapper">
+                    <div className="wrapper" key={i}>
                       <div className="point">
                         <h3 className="f-ap-r">{p.heading}</h3>
                         <p className="f-ap-l">{p.description}</p>
@@ -105,6 +105,7 @@ const FreeTrial = () => {
       <style jsx>{`
         .body {
           section.hero {
+            padding: 120px 0;
             h2 {
               font-size: 16px;
               color: #442acc;
