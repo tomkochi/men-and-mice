@@ -2,8 +2,11 @@ import Layout from "../components/Main-layout";
 import { useState } from "react";
 import Head from "next/head";
 import BottomPick from "../components/Bottom-pick";
+import { Client } from "../prismic-configuration";
 
-const Index = () => {
+const Index = ({ home }) => {
+  console.log(home.data);
+  const { hero, tag } = home.data;
   const [workSmarterPoints, setWorkSmarterPoints] = useState([
     {
       point: "Easy integration with multi cloud management.",
@@ -57,8 +60,8 @@ const Index = () => {
         <section className="hero d-flex align-items-center">
           <div className="container d-flex">
             <div className="hero-texts col">
-              <h2 className="f-ap-b">Automation</h2>
-              <h1 className="f-ap-b">Replace your homegrown solutions.</h1>
+              <h2 className="f-ap-b">{tag[0].text}</h2>
+              <h1 className="f-ap-b">{hero[0].text}</h1>
             </div>
             {/* /.hero-texts */}
             <div className="hero-image">
@@ -475,5 +478,15 @@ const Index = () => {
     </Layout>
   );
 };
+
+export async function getStaticProps(context) {
+  const req = context.req;
+  const home = await Client(req).getSingle("home");
+  return {
+    props: {
+      home,
+    }, // will be passed to the page component as props
+  };
+}
 
 export default Index;
