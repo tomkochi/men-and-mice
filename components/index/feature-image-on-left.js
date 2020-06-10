@@ -1,28 +1,14 @@
-const BottomPick = (props) => {
-  const { category, heading, text, "image-text": imageText, image } = props;
+const FeatureImageOnLeft = () => {
   return (
     <>
-      <section className="bottom-pick">
+      <section className="features">
         <div className="container">
           <div className="feature d-flex justify-content-between align-items-center">
             <div className="wrapper">
-              <div className="texts">
-                <h3 className="f-ap-r">{category}</h3>
-                <h2 className="f-ap-b">
-                  {heading}
-                  <span>.</span>
-                </h2>
-                {text && <p className="f-ap-l">{text}</p>}
-              </div>
-              {/* /.texts */}
-            </div>
-            {/* /.wrapper */}
-
-            <div className="wrapper">
               <div className="image">
-                <img src={image} />
+                <img src="/img/feature-1.png" />
                 <div className="image-overlay f-ap-r">
-                  {imageText}
+                  Tracking solutions
                   <svg
                     width="20"
                     height="19"
@@ -41,56 +27,57 @@ const BottomPick = (props) => {
               {/* /.image */}
             </div>
             {/* /.wrapper */}
+
+            <div className="wrapper">
+              <div className="texts">
+                <h2 className="f-ap-b">
+                  Stronger with tracking<span>.</span>
+                </h2>
+                <p className="f-ap-l">
+                  Knowing who did what, when and where on the network helps
+                  network and cyber security teams.
+                </p>
+              </div>
+              {/* /.texts */}
+            </div>
+            {/* /.wrapper */}
           </div>
-          {/* /.feature */}
         </div>
-        {/* /.container */}
       </section>
       <style jsx>{`
-        section.bottom-pick {
-          background: #221f20;
-          padding: 110px 0;
+        section.features {
+          background: white;
+          margin-top: 120px;
+          margin-bottom: 120px;
           .container {
             .feature {
+              &:first-of-type {
+                margin-bottom: 100px;
+              }
               .wrapper {
+                width: calc(50% - 45px);
                 .texts {
                   max-width: 410px;
-                  h3 {
-                    font-size: 16px;
-                    color: #ffdb00;
-                    text-transform: uppercase;
-                    margin-bottom: 40px;
-                  }
                   h2 {
                     font-size: 64px;
                     line-height: 110%;
-                    color: white;
-                    padding-bottom: 35px;
+                    color: #221f20;
+                    margin-bottom: 30px;
                     span {
-                      color: #ffdb00;
+                      color: #442acc;
                     }
                   }
                   p {
-                    font-size: 24px;
-                    color: white;
+                    font-size: 20px;
+                    color: #221f20;
                   }
                 }
                 .image {
+                  max-width: 605px;
                   position: relative;
-                  &:after {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    left: 0;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: url("/img/dot-over-image.png");
-                    opacity: 0.4;
-                  }
                   img {
                     width: 100%;
-                    height: 640px;
+                    height: 700px;
                     object-fit: cover;
                   }
                   .image-overlay {
@@ -117,4 +104,4 @@ const BottomPick = (props) => {
   );
 };
 
-export default BottomPick;
+export default FeatureImageOnLeft;

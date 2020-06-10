@@ -226,15 +226,13 @@ const Customers = () => {
         </section>
         {/* /section.read-case-studies */}
 
-        <section className="get-in-touch">
-          <BottomPick
-            category="Get in touch"
-            heading="Operate smarter"
-            text="Knowing who did what, when and where on the network helps network and cyber security teams."
-            image="/img/feature-1.png"
-            image-text="Get a price quote"
-          />
-        </section>
+        <BottomPick
+          category="Get in touch"
+          heading="Operate smarter"
+          text="Knowing who did what, when and where on the network helps network and cyber security teams."
+          image="/img/feature-1.png"
+          image-text="Get a price quote"
+        />
         {/* /.case-study */}
       </div>
       {/* /.body */}

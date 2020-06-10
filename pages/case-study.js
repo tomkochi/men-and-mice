@@ -289,16 +289,13 @@ const CaseStudy = () => {
           {/* /.content */}
         </div>
         {/* .body */}
-        <section className="get-in-touch">
-          <BottomPick
-            category="Get in touch"
-            heading="Feel free to contact us anytime"
-            text=""
-            image="/img/feature-1.png"
-            image-text="Lets talk"
-          />
-        </section>
-        {/* /.case-study */}
+        <BottomPick
+          category="Get in touch"
+          heading="Feel free to contact us anytime"
+          text=""
+          image="/img/feature-1.png"
+          image-text="Lets talk"
+        />
       </div>
       <style jsx>{`
         .body {
