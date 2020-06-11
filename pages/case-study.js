@@ -289,13 +289,16 @@ const CaseStudy = () => {
           {/* /.content */}
         </div>
         {/* .body */}
-        <BottomPick
-          category="Get in touch"
-          heading="Feel free to contact us anytime"
-          text=""
-          image="/img/feature-1.png"
-          image-text="Lets talk"
-        />
+        <section className="get-in-touch">
+          <BottomPick
+            category="Get in touch"
+            heading="Feel free to contact us anytime"
+            text=""
+            image="/img/feature-1.png"
+            image-text="Lets talk"
+          />
+        </section>
+        {/* /.case-study */}
       </div>
       <style jsx>{`
         .body {
@@ -346,6 +349,18 @@ const CaseStudy = () => {
                   }
                   .point-inner-wrapper {
                     width: calc(100% - 40px);
+                    .heading {
+                      font-family: "Apercu Light";
+                      font-size: 14px;
+                      color: #221f20;
+                      margin-bottom: 13px;
+                      text-transform: uppercase;
+                    }
+                    .value {
+                      font-family: "Apercu Regular";
+                      font-size: 18px;
+                      color: #221f20;
+                    }
                   }
                 }
               }
