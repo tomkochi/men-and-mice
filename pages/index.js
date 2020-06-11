@@ -13,17 +13,15 @@ import { Client } from "../prismic-configuration";
 import { integrationPoints } from "../components/index/data";
 
 const Index = ({ home }) => {
-  console.log(home.data);
   const { hero, page_category, body } = home.data;
-  console.log(body);
-
+  //
   return (
     <Layout>
       <Head>
         <title>Men&amp;Mice</title>
       </Head>
       <div className="body">
-        {/* <Hero hero={hero} tag={tag} /> */}
+        <Hero hero={hero} tag={page_category} />
         {body.map((element) => (
           <Slice props={element} />
         ))}

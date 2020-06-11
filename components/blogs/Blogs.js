@@ -33,7 +33,7 @@ const Body = () => {
         break;
     }
     const currentBlogs = blogs;
-    const urlString = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=${
+    const urlString = `https://ghost.menandmice.com/ghost/api/v3/content/posts/?key=346f6cf0c1f42cf4114d9e533c&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=${
       page + 1
     }${
       selectedTag === "All" ? "" : `&filter=tags.id:${selectedTag}`
@@ -68,7 +68,7 @@ const Body = () => {
         default:
           break;
       }
-      const urlString = `https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/posts/?key=693902285ff27989f7ad281cd8&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=1${
+      const urlString = `https://ghost.menandmice.com/ghost/api/v3/content/posts/?key=346f6cf0c1f42cf4114d9e533c&include=tags&fields=id,title,slug,feature_image,published_at&limit=5&page=1${
         selectedTag === "All" || !selectedTag
           ? ""
           : `&filter=tags.id:${selectedTag}`

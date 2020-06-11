@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../components/Main-layout";
 import Link from "next/link";
 import BottomPick from "../components/Bottom-pick";
+import { caseStudy } from "../components/index/data";
 
 const CaseStudy = () => {
   return (
@@ -290,13 +291,7 @@ const CaseStudy = () => {
         </div>
         {/* .body */}
         <section className="get-in-touch">
-          <BottomPick
-            category="Get in touch"
-            heading="Feel free to contact us anytime"
-            text=""
-            image="/img/feature-1.png"
-            image-text="Lets talk"
-          />
+          <BottomPick props={caseStudy} />
         </section>
         {/* /.case-study */}
       </div>

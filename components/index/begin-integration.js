@@ -1,4 +1,4 @@
-const BeginIntegration = ({ "integration-points": integrationPoints }) => {
+const BeginIntegration = ({ integrationPoints }) => {
   return (
     <>
       <section className="begin-integration">
