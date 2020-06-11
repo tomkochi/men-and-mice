@@ -29,7 +29,7 @@ const HeadRow = (props) => {
       setSelectedTag("All");
     }
     Axios.get(
-      "https://hlynurhalldorsson.ghost.io/ghost/api/v3/content/tags/?key=693902285ff27989f7ad281cd8"
+      "https://ghost.menandmice.com/ghost/api/v3/content/tags/?key=346f6cf0c1f42cf4114d9e533c"
     ).then((res) => {
       const ts = res.data.tags.map((t) => {
         return {

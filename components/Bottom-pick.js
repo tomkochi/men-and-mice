@@ -1,5 +1,5 @@
-const BottomPick = (props) => {
-  const { category, heading, text, "image-text": imageText, image } = props;
+const BottomPick = ({ props }) => {
+  const { category, heading, text, imageText, image } = props;
   return (
     <>
       <section className="bottom-pick">

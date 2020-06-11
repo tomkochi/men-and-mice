@@ -4,8 +4,8 @@ const Hero = ({ hero, tag }) => {
       <section className="hero d-flex align-items-center">
         <div className="container d-flex">
           <div className="hero-texts col">
-            <h2 className="f-ap-b">{tag[0].text}</h2>
-            <h1 className="f-ap-b">{hero[0].text}</h1>
+            <h2 className="f-ap-b">{tag}</h2>
+            <h1 className="f-ap-b">{hero}</h1>
           </div>
           {/* /.hero-texts */}
           <div className="hero-image">

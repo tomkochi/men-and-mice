@@ -42,3 +42,12 @@ export const integrationPoints = [
     link: "Get in touch",
   },
 ];
+
+export const caseStudy = {
+  category: "Get in touch",
+  heading: "Operate smarter",
+  text:
+    "Knowing who did what, when and where on the network helps network and cyber security teams.",
+  image: "/img/feature-1.png",
+  imageText: "Get a price quote",
+};

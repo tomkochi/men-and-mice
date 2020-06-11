@@ -7,6 +7,7 @@ import Features from "../components/customers/features";
 import ReadCaseStudies from "../components/customers/read-case-studies";
 import BottomPick from "../components/Bottom-pick";
 import { caseStudies } from "../components/customers/data";
+import { caseStudy } from "../components/index/data";
 
 const Customers = () => {
   return (
@@ -23,13 +24,7 @@ const Customers = () => {
 
         <ReadCaseStudies case-studies={caseStudies} />
 
-        <BottomPick
-          category="Get in touch"
-          heading="Operate smarter"
-          text="Knowing who did what, when and where on the network helps network and cyber security teams."
-          image="/img/feature-1.png"
-          image-text="Get a price quote"
-        />
+        <BottomPick props={caseStudy} />
       </div>
       {/* /.body */}
     </Layout>
