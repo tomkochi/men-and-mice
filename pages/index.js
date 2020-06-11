@@ -6,13 +6,16 @@ import FeatureImageOnLeft from "../components/index/feature-image-on-left";
 import FeatureImageOnRight from "../components/index/feature-image-on-right";
 import BeginIntegration from "../components/index/begin-integration";
 import BottomPick from "../components/Bottom-pick";
+//sloce
+import Slice from "../components/Slice/slice";
 import { Client } from "../prismic-configuration";
 
-import { workSmarterPoints, integrationPoints } from "../components/index/data";
+import { integrationPoints } from "../components/index/data";
 
 const Index = ({ home }) => {
   console.log(home.data);
-  const { hero, tag } = home.data;
+  const { hero, page_category, body } = home.data;
+  console.log(body);
 
   return (
     <Layout>
@@ -20,23 +23,10 @@ const Index = ({ home }) => {
         <title>Men&amp;Mice</title>
       </Head>
       <div className="body">
-        <Hero hero={hero} tag={tag} />
-
-        <WorkSmarter workSmarterPoints={workSmarterPoints} />
-
-        <FeatureImageOnRight />
-
-        <FeatureImageOnLeft />
-
-        <BeginIntegration integration-points={integrationPoints} />
-
-        <BottomPick
-          category="Case study"
-          heading="Integrated layers"
-          text="Knowing who did what, when and where on the network helps network and cyber security teams."
-          image="/img/feature-1.png"
-          image-text="Case study"
-        />
+        {/* <Hero hero={hero} tag={tag} /> */}
+        {body.map((element) => (
+          <Slice props={element} />
+        ))}
       </div>
       {/* /.body */}
     </Layout>
@@ -45,7 +35,7 @@ const Index = ({ home }) => {
 
 export async function getStaticProps(context) {
   const req = context.req;
-  const home = await Client(req).getSingle("home");
+  const home = await Client(req).getSingle("homepage");
   return {
     props: {
       home,
