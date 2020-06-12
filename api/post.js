@@ -2,8 +2,8 @@ import GhostContentAPI from "@tryghost/content-api";
 
 // Create API instance with site credentials
 const api = new GhostContentAPI({
-  url: "https://hlynurhalldorsson.ghost.io",
-  key: "693902285ff27989f7ad281cd8",
+  url: "https://ghost.menandmice.com",
+  key: "346f6cf0c1f42cf4114d9e533c",
   version: "v3",
 });
 
