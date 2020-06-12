@@ -1,5 +1,12 @@
-const BottomPick = ({ props }) => {
-  const { category, heading, text, imageText, image } = props;
+const BottomPick = (props) => {
+  const {
+    title,
+    category,
+    description,
+    link_name,
+    url,
+    image,
+  } = props.data.primary;
   return (
     <>
       <section className="bottom-pick">
@@ -9,10 +16,10 @@ const BottomPick = ({ props }) => {
               <div className="texts">
                 <h3 className="f-ap-r">{category}</h3>
                 <h2 className="f-ap-b">
-                  {heading}
+                  {title[0].text}
                   <span>.</span>
                 </h2>
-                {text && <p className="f-ap-l">{text}</p>}
+                {description && <p className="f-ap-l">{description}</p>}
               </div>
               {/* /.texts */}
             </div>
@@ -20,23 +27,25 @@ const BottomPick = ({ props }) => {
 
             <div className="wrapper">
               <div className="image">
-                <img src={image} />
-                <div className="image-overlay f-ap-r">
-                  {imageText}
-                  <svg
-                    width="20"
-                    height="19"
-                    viewBox="0 0 20 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                      stroke="#221F20"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </div>
+                <img src={image.url} />
+                <a href={url || "#"}>
+                  <div className="image-overlay f-ap-r">
+                    {link_name}
+                    <svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
+                        stroke="#221F20"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                </a>
               </div>
               {/* /.image */}
             </div>
@@ -103,6 +112,7 @@ const BottomPick = ({ props }) => {
                     background: #ffdb00;
                     padding: 38px 40px 31px;
                     cursor: pointer;
+                    z-index: 600;
                     svg {
                       margin-left: 39px;
                     }

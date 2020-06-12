@@ -22,8 +22,8 @@ const Index = ({ home }) => {
       </Head>
       <div className="body">
         <Hero hero={hero} tag={page_category} />
-        {body.map((element) => (
-          <Slice props={element} />
+        {body.map((element, i) => (
+          <Slice props={element} key={i} />
         ))}
       </div>
       {/* /.body */}

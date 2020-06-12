@@ -1,10 +1,13 @@
-const BeginIntegration = ({ integrationPoints }) => {
+const BeginIntegration = (props) => {
+  const integrationPoints = props.data.items;
+  const title = props.data.primary.title[0].text;
   return (
     <>
       <section className="begin-integration">
         <div className="container">
           <h2 className="f-ap-b">
-            Begin your <br /> integration<span>.</span>
+            {title}
+            <span>.</span>
           </h2>
           <div className="points d-flex flex-wrap justify-content-between">
             {integrationPoints.map((p, i) => {
@@ -12,25 +15,27 @@ const BeginIntegration = ({ integrationPoints }) => {
                 <div className="wrapper" key={i}>
                   <div className="point">
                     <div className="d-flex justify-content-between align-items-center">
-                      <div className="left f-ap-l">{p.text}</div>
+                      <div className="left f-ap-l">{p.description}</div>
                       {/* /.left */}
-                      <div className="right f-ap-b">
-                        {p.link}
-                        <svg
-                          width="20"
-                          height="19"
-                          viewBox="0 0 20 19"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                            stroke="#442acc"
-                            strokeWidth="2"
-                          />
-                        </svg>
-                      </div>
-                      {/* /.right */}
+                      <a href={p.url || "#"}>
+                        <div className="right f-ap-b">
+                          {p.link_name}
+                          <svg
+                            width="20"
+                            height="19"
+                            viewBox="0 0 20 19"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
+                              stroke="#442acc"
+                              strokeWidth="2"
+                            />
+                          </svg>
+                        </div>
+                        {/* /.right */}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -51,6 +56,7 @@ const BeginIntegration = ({ integrationPoints }) => {
               font-size: 64px;
               color: #221f20;
               line-height: 110%;
+              max-width: 320px;
               span {
                 color: #442acc;
               }

@@ -1,4 +1,6 @@
-const FeatureImageOnLeft = () => {
+const FeatureImageOnLeft = (props) => {
+  const { description, link_name, url, image, title } = props.data.primary;
+
   return (
     <>
       <section className="features">
@@ -6,23 +8,25 @@ const FeatureImageOnLeft = () => {
           <div className="feature d-flex justify-content-between align-items-center">
             <div className="wrapper">
               <div className="image">
-                <img src="/img/feature-1.png" />
-                <div className="image-overlay f-ap-r">
-                  Tracking solutions
-                  <svg
-                    width="20"
-                    height="19"
-                    viewBox="0 0 20 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
-                      stroke="#221F20"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </div>
+                <img src={image.url} />
+                <a href={url || "#"}>
+                  <div className="image-overlay f-ap-r">
+                    {link_name}
+                    <svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
+                        stroke="#221F20"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                </a>
               </div>
               {/* /.image */}
             </div>
@@ -31,12 +35,10 @@ const FeatureImageOnLeft = () => {
             <div className="wrapper">
               <div className="texts">
                 <h2 className="f-ap-b">
-                  Stronger with tracking<span>.</span>
+                  {title[0].text}
+                  <span>.</span>
                 </h2>
-                <p className="f-ap-l">
-                  Knowing who did what, when and where on the network helps
-                  network and cyber security teams.
-                </p>
+                <p className="f-ap-l">{description}</p>
               </div>
               {/* /.texts */}
             </div>
