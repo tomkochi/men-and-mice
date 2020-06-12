@@ -8,6 +8,7 @@ import { caseStudy, integrationPoints } from "../../components/index/data";
 
 export default function Slice({ props }) {
   const { slice_type } = props;
+
   switch (slice_type) {
     case "text_and_links_yellow":
       return <WorkSmarter data={props} />;

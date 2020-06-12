@@ -7,6 +7,7 @@ const BottomPick = (props) => {
     url,
     image,
   } = props.data.primary;
+
   return (
     <>
       <section className="bottom-pick">
@@ -125,6 +126,23 @@ const BottomPick = (props) => {
       `}</style>
     </>
   );
+};
+
+BottomPick.defaultProps = {
+  data: {
+    primary: {
+      title: [{ text: "This is a default title" }],
+      category: "Case Study",
+      description:
+        "Knowing who did what, when and where on the network helps network and cyber security teams",
+      link_name: "Link comes here",
+      url: "#",
+      image: {
+        url:
+          "https://images.prismic.io/men-mice/0890f571-aa8e-4548-9c3b-fe99af610ade_feature-1.png?auto=compress,format",
+      },
+    },
+  },
 };
 
 export default BottomPick;
