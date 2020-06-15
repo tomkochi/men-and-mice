@@ -5,7 +5,10 @@ const Hero = ({ hero, tag }) => {
         <div className="container d-flex">
           <div className="hero-texts col">
             <h2 className="f-ap-b">{tag}</h2>
-            <h1 className="f-ap-b">{hero}</h1>
+            <h1 className="f-ap-b">
+              {hero}
+              <span>.</span>
+            </h1>
           </div>
           {/* /.hero-texts */}
           <div className="hero-image">
@@ -70,6 +73,9 @@ const Hero = ({ hero, tag }) => {
               max-width: 647px;
               line-height: 110%;
               margin: 0;
+              span {
+                color: #442acc;
+              }
             }
           }
         }

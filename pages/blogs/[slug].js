@@ -6,7 +6,15 @@ import remark from "remark";
 import html from "remark-html";
 import { useRouter } from "next/router";
 
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+} from "react-share";
+import { useState, useEffect } from "react";
+
 export default function Blog(props) {
+  const [fullUrl, setFullUrl] = useState("");
   const post = props.postData;
   const router = useRouter();
 
@@ -17,6 +25,9 @@ export default function Blog(props) {
       htmlContent = String(file);
     });
 
+  useEffect(() => {
+    setFullUrl(window.location.href);
+  }, []);
   return (
     <Layout>
       <Head>
@@ -50,7 +61,7 @@ export default function Blog(props) {
                 Articles
               </a>
 
-              <div className="d-flex">
+              <div className="tags d-flex">
                 {post.tags.map((tag) => {
                   return (
                     <Link
@@ -73,15 +84,30 @@ export default function Blog(props) {
           <div className="content">
             <div className="wrapper">
               <div className="social-media">
-                <a href="#" className="icon">
-                  <img src="/img/facebook.svg" alt="" />
-                </a>
-                <a href="#" className="icon">
-                  <img src="/img/twitter.svg" alt="" />
-                </a>
-                <a href="#" className="icon">
-                  <img src="/img/linked-in.svg" alt="" />
-                </a>
+                <span className="icon">
+                  <FacebookShareButton
+                    quote={`Share ${post.title} on Facebook`}
+                    url={fullUrl}
+                  >
+                    <img src="/img/facebook.svg" alt="" />
+                  </FacebookShareButton>
+                </span>
+                <span className="icon">
+                  <TwitterShareButton
+                    quote={`Share ${post.title} on Twitter`}
+                    url={fullUrl}
+                  >
+                    <img src="/img/twitter.svg" alt="" />
+                  </TwitterShareButton>
+                </span>
+                <span className="icon">
+                  <LinkedinShareButton
+                    quote={`Share ${post.title} on Twitter`}
+                    url={fullUrl}
+                  >
+                    <img src="/img/linked-in.svg" alt="" />
+                  </LinkedinShareButton>
+                </span>
               </div>
               <div
                 className="html-content"
@@ -113,15 +139,30 @@ export default function Blog(props) {
               </button>
               <h4 className="f-ap-r">Share on Social Media</h4>
               <div className="social-icons d-flex">
-                <a href="#" className="icon">
-                  <img src="/img/facebook.svg" width="20" alt="" />
-                </a>
-                <a href="#" className="icon">
-                  <img src="/img/twitter.svg" width="20" alt="" />
-                </a>
-                <a href="#" className="icon">
-                  <img src="/img/linked-in.svg" width="20" alt="" />
-                </a>
+                <span className="icon">
+                  <FacebookShareButton
+                    quote={`Share ${post.title} on Facebook`}
+                    url={fullUrl}
+                  >
+                    <img src="/img/facebook.svg" width="20" alt="" />
+                  </FacebookShareButton>
+                </span>
+                <span className="icon">
+                  <TwitterShareButton
+                    quote={`Share ${post.title} on Twitter`}
+                    url={fullUrl}
+                  >
+                    <img src="/img/twitter.svg" width="20" alt="" />
+                  </TwitterShareButton>
+                </span>
+                <span className="icon">
+                  <LinkedinShareButton
+                    quote={`Share ${post.title} on LinkedIn`}
+                    url={fullUrl}
+                  >
+                    <img src="/img/Linked-in.svg" width="20" alt="" />
+                  </LinkedinShareButton>
+                </span>
               </div>
             </div>
             {/* .wrapper */}
@@ -150,7 +191,7 @@ export default function Blog(props) {
                 font-size: 12px;
                 color: #ffdb00;
                 text-transform: uppercase;
-                margin: 70px 25px 20px 0;
+                margin: 0 25px 20px 0;
                 cursor: pointer;
                 text-decoration: none;
                 -webkit-transition: all 0.2s;
@@ -166,9 +207,13 @@ export default function Blog(props) {
                 font-size: 18px;
                 color: #ffffff;
                 text-transform: capitalize;
+                margin-bottom: 70px;
                 svg {
                   margin-right: 12px;
                 }
+              }
+              .tags {
+                margin-top: 70px;
               }
               h1 {
                 font-size: 48px;
@@ -227,6 +272,9 @@ export default function Blog(props) {
                   -webkit-border-radius: 20px;
                   -moz-border-radius: 20px;
                   border-radius: 20px;
+                  img {
+                    margin-top: -3px;
+                  }
                 }
               }
               .html-content {
@@ -356,14 +404,30 @@ export default function Blog(props) {
                 align-items: center;
                 justify-content: center;
                 margin: 0 12px;
+                img {
+                  margin-top: -3px;
+                }
               }
             }
           }
         }
       `}</style>
       <style jsx global>{`
+        .html * {
+          font-size: 200px;
+        }
         .html-content img {
           max-width: 100%;
+        }
+        .html-content code {
+          display: flex;
+          margin: 70px 0;
+          width: 100%;
+          overflow-x: auto;
+          color: #221f20;
+          font-size: 16px;
+          background: #f2f2f2;
+          padding: 30px;
         }
         .html-content a {
           text-decoration: none;
@@ -443,15 +507,24 @@ export default function Blog(props) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = await getSlugs();
-  return {
-    paths,
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   const paths = await getSlugs();
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps({ params }) {
+// export async function getStaticProps({ params }) {
+//   const postData = await getPost(params.slug);
+//   return {
+//     props: {
+//       postData,
+//     },
+//   };
+// }
+
+export async function getServerSideProps({ params }) {
   const postData = await getPost(params.slug);
   return {
     props: {

@@ -50,11 +50,13 @@ const Blog = ({ data }) => {
               </Link>
             </div>
           </div>
-          <img
-            src={data.feature_image}
-            className={ext() !== "svg" ? "photo" : ""}
-            alt=""
-          />
+          <Link href="/blogs/[slug]" as={`/blogs/${data.slug}`}>
+            <img
+              src={data.feature_image}
+              className={ext() !== "svg" ? "photo" : ""}
+              alt=""
+            />
+          </Link>
         </div>
         {/* .middle */}
         <div className="right col-2">
@@ -162,6 +164,7 @@ const Blog = ({ data }) => {
             img {
               position: absolute;
               opacity: 0.4;
+              cursor: pointer;
               @media (max-width: 991px) {
                 width: 130px;
                 left: -38px;

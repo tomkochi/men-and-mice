@@ -179,6 +179,7 @@ const HeadRow = (props) => {
                   -ms-transition: all 0.5s;
                   -o-transition: all 0.5s;
                   transition: all 0.5s;
+                  text-transform: capitalize;
                   @media (max-width: 767px) {
                     font-size: 14px;
                   }
