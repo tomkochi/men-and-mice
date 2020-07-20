@@ -1,4 +1,4 @@
-const ReadCaseStudies = ({ "case-studies": caseStudies }) => {
+const ReadCaseStudies = ({ 'case-studies': caseStudies }) => {
   return (
     <>
       <section className="read-case-studies">
@@ -23,7 +23,7 @@ const ReadCaseStudies = ({ "case-studies": caseStudies }) => {
                     <h4 className="f-ap-r">{c.description}</h4>
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
           {/* /.case-studies */}
@@ -33,7 +33,7 @@ const ReadCaseStudies = ({ "case-studies": caseStudies }) => {
       <style jsx>{`
         section.read-case-studies {
           background: white;
-          padding: 80px 0 140px 0;
+          margin: 80px 0 140px 0;
           h2 {
             font-size: 64px;
             line-height: 110%;
@@ -85,7 +85,7 @@ const ReadCaseStudies = ({ "case-studies": caseStudies }) => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default ReadCaseStudies;
+export default ReadCaseStudies

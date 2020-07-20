@@ -1,4 +1,4 @@
-const StartTrialPoints = ({ "free-trial-points": freeTrialPoints }) => {
+const StartTrialPoints = ({ 'free-trial-points': freeTrialPoints }) => {
   return (
     <>
       <section className="start-trial-points">
@@ -14,7 +14,7 @@ const StartTrialPoints = ({ "free-trial-points": freeTrialPoints }) => {
                   </div>
                   {/* /.point */}
                 </div>
-              );
+              )
             })}
           </div>
           {/* /.points */}
@@ -23,8 +23,8 @@ const StartTrialPoints = ({ "free-trial-points": freeTrialPoints }) => {
       </section>
       <style jsx>{`
         section.start-trial-points {
-          background: #ffdb00;
-          padding: 140px 0;
+          background: white;
+          margin: 120px 0;
           h2 {
             font-size: 36px;
             color: #221f20;
@@ -54,7 +54,7 @@ const StartTrialPoints = ({ "free-trial-points": freeTrialPoints }) => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default StartTrialPoints;
+export default StartTrialPoints

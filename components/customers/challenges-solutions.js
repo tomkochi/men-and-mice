@@ -37,8 +37,7 @@ const ChallengesSolutions = () => {
       </section>
       <style jsx>{`
         section.challenges-solutions {
-          background: #ffdb00;
-          padding: 210px 0;
+          margin-top: 180px;
           h2 {
             font-size: 36px;
             line-height: 110%;
@@ -54,14 +53,14 @@ const ChallengesSolutions = () => {
           .points {
             position: relative;
             &:after {
-              content: "";
+              content: '';
               position: absolute;
               right: calc(50% + 100px);
               top: 47%;
               display: block;
               width: 14px;
               height: 14px;
-              background: url("/img/black-arrow-right.svg") no-repeat center;
+              background: url('/img/black-arrow-right.svg') no-repeat center;
             }
             .wrapper {
               width: 50%;
@@ -73,7 +72,7 @@ const ChallengesSolutions = () => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default ChallengesSolutions;
+export default ChallengesSolutions

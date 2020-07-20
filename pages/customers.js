@@ -1,13 +1,12 @@
-import Layout from "../components/Main-layout";
-import { useState } from "react";
-import Head from "next/head";
-import Hero from "../components/customers/hero";
-import ChallengesSolutions from "../components/customers/challenges-solutions";
-import Features from "../components/customers/features";
-import ReadCaseStudies from "../components/customers/read-case-studies";
-import BottomPick from "../components/Bottom-pick";
-import { caseStudies } from "../components/customers/data";
-import { caseStudy } from "../components/index/data";
+import Layout from '../components/Main-layout'
+import Head from 'next/head'
+import Hero from '../components/heros/text-right'
+import ChallengesSolutions from '../components/customers/challenges-solutions'
+import ReadCaseStudies from '../components/customers/read-case-studies'
+import FeatureImageOnRight from '../components/feature-image-on-right'
+import BottomPick from '../components/Bottom-pick'
+import { caseStudies } from '../components/customers/data'
+import { caseStudy } from '../components/index/data'
 
 const Customers = () => {
   return (
@@ -16,11 +15,28 @@ const Customers = () => {
         <title>Men&amp;Mice</title>
       </Head>
       <div className="body">
-        <Hero />
+        <Hero
+          hero="We provide for our customers"
+          image="/img/customers.svg"
+          tags={['Why Us', 'Customers']}
+        />
 
         <ChallengesSolutions />
 
-        <Features />
+        <FeatureImageOnRight
+          data={{
+            primary: {
+              description:
+                'Knowing who did what, when and where on the network helps network and cyber security teams.',
+              link_name: 'professional services',
+              url: '/',
+              image: {
+                url: '/img/feature-1.png',
+              },
+              title: [{ text: 'Customers first' }],
+            },
+          }}
+        />
 
         <ReadCaseStudies case-studies={caseStudies} />
 
@@ -28,7 +44,7 @@ const Customers = () => {
       </div>
       {/* /.body */}
     </Layout>
-  );
-};
+  )
+}
 
-export default Customers;
+export default Customers

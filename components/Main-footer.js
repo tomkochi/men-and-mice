@@ -1,26 +1,17 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const Footer = (props) => {
-  const router = useRouter();
-  const { yellowfooter } = props;
+  const router = useRouter()
 
   return (
     <>
-      <div className={`footer ${yellowfooter ? "yellow" : ""}`}>
+      <div className="footer">
         <div className="container d-md-flex">
           <div className="logo">
             <Link href="/" passHref>
               <a className="navbar-brand">
-                <img
-                  src={`/img/${
-                    yellowfooter
-                      ? "logo-two-lines-black.svg"
-                      : "logo-two-lines-white.svg"
-                  }`}
-                  width="138"
-                  alt=""
-                />
+                <img src="/img/logo-two-lines-black.svg" width="138" alt="" />
               </a>
             </Link>
           </div>
@@ -171,32 +162,16 @@ const Footer = (props) => {
         <div className="container social">
           <div className="d-flex">
             <a href="#" className="follow">
-              {yellowfooter ? (
-                <img src="/img/facebook.svg" alt="" />
-              ) : (
-                <img src="/img/facebook-white.svg" alt="" />
-              )}
+              <img src="/img/facebook.svg" alt="" />
             </a>
             <a href="#" className="follow">
-              {yellowfooter ? (
-                <img src="/img/linked-in.svg" alt="" />
-              ) : (
-                <img src="/img/linked-in-white.svg" alt="" />
-              )}
+              <img src="/img/linked-in.svg" alt="" />
             </a>
             <a href="#" className="follow">
-              {yellowfooter ? (
-                <img src="/img/youtube.svg" alt="" />
-              ) : (
-                <img src="/img/youtube-white.svg" alt="" />
-              )}
+              <img src="/img/youtube.svg" alt="" />
             </a>
             <a href="#" className="follow">
-              {yellowfooter ? (
-                <img src="/img/twitter.svg" alt="" />
-              ) : (
-                <img src="/img/twitter-white.svg" alt="" />
-              )}
+              <img src="/img/twitter.svg" alt="" />
             </a>
           </div>
         </div>
@@ -205,23 +180,8 @@ const Footer = (props) => {
 
       <style jsx>{`
         .footer {
-          background: #282426;
           padding: 90px 0;
-          &.yellow {
-            background: #ffdb00;
-            .container {
-              h4 {
-                color: #221f20;
-              }
-              ul li a,
-              h4 {
-                color: #221f20;
-              }
-            }
-            .copyright {
-              color: #221f20;
-            }
-          }
+          background: #ffdb00;
           .container {
             width: calc(100vw - 100px);
             max-width: 1300px;
@@ -244,17 +204,17 @@ const Footer = (props) => {
               }
             }
             h4 {
-              color: white;
+              color: #221f20;
               font-size: 14px;
-              font-family: "Apercu Bold";
+              font-family: 'Apercu Bold';
               text-transform: uppercase;
             }
             ul {
               li {
                 a {
-                  font-family: "Apercu Regular";
+                  font-family: 'Apercu Regular';
                   font-size: 14px;
-                  color: white;
+                  color: #221f20;
                   opacity: 0.6;
                   text-decoration: none;
                   -webkit-transition: all time;
@@ -264,7 +224,7 @@ const Footer = (props) => {
                   transition: all 0.5s;
                   position: relative;
                   &:after {
-                    content: "";
+                    content: '';
                     position: absolute;
                     left: 0;
                     bottom: 0;
@@ -310,9 +270,9 @@ const Footer = (props) => {
             }
           }
           .copyright {
-            font-family: "Apercu Regular";
+            font-family: 'Apercu Regular';
             font-size: 14px;
-            color: white;
+            color: #221f20;
             text-transform: uppercase;
             text-align: center;
             margin-top: 25px;
@@ -320,7 +280,7 @@ const Footer = (props) => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Layout from "../components/Main-layout";
-import Hero from "../components/free-trial-thank-you/hero";
-import Steps from "../components/free-trial-thank-you/steps";
+import Head from 'next/head'
+import Layout from '../../components/Main-layout'
+import Hero from '../../components/free-trial-thank-you/hero'
+import Steps from '../../components/free-trial-thank-you/steps'
 
 const FreeTrial = () => {
   return (
@@ -17,7 +17,7 @@ const FreeTrial = () => {
         {/* .body */}
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default FreeTrial;
+export default FreeTrial

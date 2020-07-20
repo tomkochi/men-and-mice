@@ -3,17 +3,22 @@ const Form = () => {
     <>
       <section className="form">
         <div className="container">
-          <h4>Form here</h4>
+          <h4 className="f-ap-b">Sign up for a 30 day trial.</h4>
         </div>
         {/* /.container */}
       </section>
       <style jsx>{`
         section.form {
-          padding: 140px 0;
+          margin: 140px 0;
+          h4 {
+            font-size: 36px;
+            color: #221f20;
+            max-width: 245px;
+          }
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form

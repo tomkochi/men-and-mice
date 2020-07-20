@@ -1,12 +1,12 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 const Header = () => {
   return (
     <div className="header">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <Link href="/blogs" passHref>
+      <nav className="navbar navbar-expand-lg navbar-dark">
+        <Link href="/" passHref>
           <a className="navbar-brand">
-            <img src="/img/logo-only-white.svg" width="76" alt="" />
+            <img src="/img/logo-one-line-white.svg" width="203" alt="" />
           </a>
         </Link>
         <button
@@ -23,14 +23,18 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav middle">
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Why us?
-              </a>
+              <Link href="/" passHref>
+                <a className="nav-link" href="#">
+                  Why us?
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Products
-              </a>
+              <Link href="/" passHref>
+                <a className="nav-link" href="#">
+                  Products
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link href="/customers" passHref>
@@ -38,114 +42,53 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Resources
-              </a>
+              <Link href="/blogs" passHref>
+                <a className="nav-link" href="\blogs">
+                  Blog
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Support
-              </a>
+              <Link href="/" passHref>
+                <a className="nav-link" href="#">
+                  Support
+                </a>
+              </Link>
             </li>
           </ul>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <svg
-                  width="22"
-                  height="20"
-                  viewBox="0 0 22 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 16.3286V7.68164H6.50261V16.3286C6.50261 17.8481 5.27081 19.0799 3.7513 19.0799C2.2318 19.0799 1 17.8481 1 16.3286Z"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M4.14441 19.08H16.8459C18.9481 19.08 20.6522 17.3759 20.6522 15.2737V1H6.50267V8.99692"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M9.25378 4.93042H18.2938"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M9.25378 8.07471H18.2938"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M9.25378 11.2192H18.2938"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                <svg
-                  width="23"
-                  height="22"
-                  viewBox="0 0 23 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <ellipse
-                    cx="11.8261"
-                    cy="7.73073"
-                    rx="2.88462"
-                    ry="3.07692"
-                    stroke="white"
-                    strokeWidth="1.75"
-                  />
-                  <path
-                    d="M20.0985 17.0203C18.0012 14.8575 15.0343 13.5085 11.745 13.5085C8.45571 13.5085 5.48875 14.8575 3.39148 17.0203"
-                    stroke="white"
-                    strokeWidth="1.75"
-                  />
-                  <circle
-                    cx="11.826"
-                    cy="11"
-                    r="10"
-                    stroke="white"
-                    strokeWidth="1.75"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                <svg
-                  width="20"
-                  height="19"
-                  viewBox="0 0 20 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="11.3713"
-                    cy="7.95455"
-                    r="6.95455"
-                    stroke="white"
-                    strokeWidth="1.75"
-                  />
-                  <path
-                    d="M1.32593 17.9999L6.73502 12.5908"
-                    stroke="white"
-                    strokeWidth="1.75"
-                  />
-                </svg>
-              </a>
+              <Link href="/" passHref>
+                <a className="nav-link" href="#">
+                  <svg
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="11.3713"
+                      cy="7.95455"
+                      r="6.95455"
+                      stroke="white"
+                      strokeWidth="1.75"
+                    />
+                    <path
+                      d="M1.32593 17.9999L6.73502 12.5908"
+                      stroke="white"
+                      strokeWidth="1.75"
+                    />
+                  </svg>
+                </a>
+              </Link>
             </li>
             <li className="nav-item pl-3">
-              <a className="nav-link free-trial" href="#">
-                <button>Free trial</button>
-              </a>
+              <Link href="/" passHref>
+                <a className="nav-link free-trial" href="#">
+                  <button>Free trial</button>
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -154,7 +97,7 @@ const Header = () => {
         .header {
           nav {
             padding: 37px 50px;
-            background: white;
+            background: #221f20;
             @media (max-width: 1030px) {
               padding: 30px;
             }
@@ -186,7 +129,7 @@ const Header = () => {
                 li a {
                   position: relative;
                   &:after {
-                    content: "";
+                    content: '';
                     position: absolute;
                     left: 0;
                     bottom: 0;
@@ -220,9 +163,12 @@ const Header = () => {
                 position: relative;
                 text-align: center;
                 a {
-                  font-family: "Apercu Medium";
+                  font-family: 'Apercu Medium';
                   font-size: 18px;
                   color: white !important;
+                  @media (max-width: 1055px) {
+                    font-size: 16px;
+                  }
                   svg * {
                     -webkit-transition: all 0.5s;
                     -moz-transition: all 0.5s;
@@ -240,9 +186,10 @@ const Header = () => {
                   padding: 12px 18px;
                   background: #ffdb00;
                   border: none;
-                  -webkit-border-radius: 0;
-                  -moz-border-radius: 0;
-                  border-radius: 0;
+                  height: 47px;
+                  -webkit-border-radius: 47px;
+                  -moz-border-radius: 47px;
+                  border-radius: 47px;
                   -webkit-transition: background 0.5s;
                   -moz-transition: background 0.5s;
                   -ms-transition: background 0.5s;
@@ -258,7 +205,7 @@ const Header = () => {
         }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

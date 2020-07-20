@@ -1,0 +1,103 @@
+const PointsWithLink = (props) => {
+  const points = props.data.items
+  const title = props.data.primary.title[0].text
+  return (
+    <>
+      <section className="points-with-link">
+        <div className="container">
+          <h2 className="f-ap-b">
+            {title}
+            <span>.</span>
+          </h2>
+          <div className="points w-100 d-flex flex-wrap justify-content-between">
+            {points.map((p, i) => {
+              return (
+                <div className="wrapper" key={i}>
+                  <div className="point">
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="left f-ap-l">{p.description}</div>
+                      {/* /.left */}
+                      <a href={p.url || '#'}>
+                        <div className="right f-ap-b">
+                          {p.link_name}
+                          <svg
+                            width="20"
+                            height="19"
+                            viewBox="0 0 20 19"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6.53059 4.36845L15.2685 4.36846M15.2685 4.36846L15.2685 13.1063M15.2685 4.36846L5.36844 14.2675"
+                              stroke="#442ACC"
+                              strokeWidth="2"
+                            />
+                          </svg>
+                        </div>
+                        {/* /.right */}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          {/* /.points */}
+        </div>
+      </section>
+      <style jsx>{`
+        section.points-with-link {
+          background: white;
+          margin: 140px 0;
+          h2 {
+            font-size: 36px;
+            line-height: 105%;
+            color: #221f20;
+            margin-bottom: 10px;
+            span {
+              color: #442acc;
+            }
+          }
+          .points {
+            .wrapper {
+              width: calc(50% - 45px);
+              padding: 60px 0;
+              border-bottom: 1px solid rgba(34, 31, 32, 0.16);
+              &:nth-last-of-type(-n + 2) {
+                border: none;
+              }
+            }
+            .point {
+              .left {
+                font-size: 20px;
+                color: #221f20;
+                max-width: 250px;
+                line-height: 150%;
+              }
+              a {
+                text-decoration: none;
+              }
+              .right {
+                font-size: 17px;
+                color: #442acc;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: opacity 0.2s;
+                white-space: nowrap;
+                svg {
+                  margin-left: 18px;
+                  margin-top: -3px;
+                }
+                &:hover {
+                  opacity: 0.6;
+                }
+              }
+            }
+          }
+        }
+      `}</style>
+    </>
+  )
+}
+
+export default PointsWithLink

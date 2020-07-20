@@ -10,7 +10,7 @@ const Hero = () => {
           <p className="f-ap-l">
             We aim to keep installation as simple and painless as possible. But
             if you have any questions or need some added support, please feel
-            free to contact us at{" "}
+            free to contact us at{' '}
             <a href="mailto:support@menandmice.com">support@menandmice.com</a>
           </p>
         </div>
@@ -19,7 +19,7 @@ const Hero = () => {
 
       <style jsx>{`
         section.hero {
-          padding: 140px 0 50px 0;
+          margin: 140px 0 50px;
           h2 {
             font-size: 16px;
             color: #442acc;
@@ -52,7 +52,7 @@ const Hero = () => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

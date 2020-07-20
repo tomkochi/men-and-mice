@@ -1,6 +1,6 @@
-import Header from "./Blogs-header";
-import Footer from "./Blogs-footer";
-import "../public/css/global.css";
+import Header from './Header'
+import Footer from './Blogs-footer'
+import '../public/css/global.css'
 
 const Layout = (props) => {
   return (
@@ -9,7 +9,7 @@ const Layout = (props) => {
       <div className="layout">{props.children}</div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

@@ -1,5 +1,5 @@
 const FeatureImageOnLeft = (props) => {
-  const { description, link_name, url, image, title } = props.data.primary;
+  const { description, link_name, url, image, title } = props.data.primary
 
   return (
     <>
@@ -9,7 +9,7 @@ const FeatureImageOnLeft = (props) => {
             <div className="wrapper">
               <div className="image">
                 <img src={image.url} />
-                <a href={url || "#"}>
+                <a href={url || '#'}>
                   <div className="image-overlay f-ap-r">
                     {link_name}
                     <svg
@@ -77,6 +77,17 @@ const FeatureImageOnLeft = (props) => {
                 .image {
                   max-width: 605px;
                   position: relative;
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url('/img/dot-over-image.png');
+                    opacity: 0.4;
+                  }
                   img {
                     width: 100%;
                     height: 700px;
@@ -103,7 +114,7 @@ const FeatureImageOnLeft = (props) => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default FeatureImageOnLeft;
+export default FeatureImageOnLeft
